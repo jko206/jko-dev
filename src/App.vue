@@ -9,33 +9,33 @@
           <h2>Software Developer</h2>
           <ul class="contact-list">
             <li>
-              <a href="https://j-ko.dev">
-                <img src="" alt="" class="contact-ion" />
+              <a target="_blank" href="https://j-ko.dev">
+                <!-- <img src="" alt="" class="contact-ion" /> -->
                 J-Ko.dev
               </a>
             </li>
             <li>
-              <a href="mailto:206jko@gmail.com">
-                <img src="" alt="" class="contact-ion" />
+              <a target="_blank" href="mailto:206jko@gmail.com">
+                <!-- <img src="" alt="" class="contact-ion" /> -->
                 206jko@gmail.com
               </a>
             </li>
             <li>
-              <a href="tel:+14252205899">
-                <img src="" alt="" class="contact-ion" />
+              <a target="_blank" href="tel:+14252205899">
+                <!-- <img src="" alt="" class="contact-ion" /> -->
                 +1.425.220.5899
               </a>
             </li>
             <li>
-              <a href="https://Github.com/jko206">
-                <img src="" alt="" class="contact-ion" />
+              <a target="_blank" href="https://Github.com/jko206">
+                <!-- <img src="" alt="" class="contact-ion" /> -->
                 Github.com/jko206
               </a>
             </li>
             <li>
-              <a href="https://LinkedIn.com/in/jai-ko">
-                <img src="" alt="" class="contact-ion" />
-                LinkedIn.com/in/jai-ko
+              <a target="_blank" href="https://LinkedIn.com/in/206jko">
+                <!-- <img src="" alt="" class="contact-ion" /> -->
+                LinkedIn.com/in/206jko
               </a>
             </li>
           </ul>
