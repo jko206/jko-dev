@@ -43,16 +43,12 @@
 
         <div class="section">
           <h2>Introduction</h2>
-          <div>
-            Passionate frontend engineer, building the bridge between computer and humans. A
-            computer is as good as how easy it is to use it, and my job is to make computing easy
-            for people, both on mobile and web.
-          </div>
+          <div>A computer is only as good as how easy it is to use it; I make that happen.</div>
         </div>
 
         <div class="section">
           <h2>Education</h2>
-          <h3>University of Washington, Seatttle</h3>
+          <h3>U of Washington, Seattle</h3>
           <ul class="plain-list">
             <li>Mathematics B.S.</li>
             <li>Computer science focused</li>
@@ -71,9 +67,9 @@
             <li>Vue</li>
             <li>React</li>
             <li>Redux</li>
+            <li>jQuery</li>
             <li>SASS</li>
             <li>SCSS</li>
-            <li>jQuery</li>
             <li>jest</li>
             <li class="de-emphasized">GraphQL</li>
             <li class="de-emphasized">RxJS</li>
@@ -112,26 +108,10 @@
           <ul class="slash-list">
             <li>npm</li>
             <li>webpack</li>
-            <li>vite</li>
             <li>Firebase</li>
-            <li>Babel</li>
             <li>git</li>
             <li>Vue-related tools</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h2>MISC</h2>
-          <ul class="hash-list">
-            <li>
-              Places in the top percentiles in various JavaScript assessments, such as LinkedIn,
-              TopTal, TripleByte, etc.
-            </li>
-            <li>
-              Having been a private tutor for 9 years, I care deeply about how and why people
-              encounter hindrance in accessing information. This care has been translated into my
-              passion for creating intuitive UI/UX/translations of a web page
-            </li>
+            <li>mobile-dev tools</li>
           </ul>
         </div>
       </div>
@@ -142,18 +122,26 @@
         <div class="section">
           <div class="h3-row">
             <h3>Rippling</h3>
-            <span class="title">Senior Software Engineer</span>
+            <span class="title">Senior Software Engineer / 2022.10 - 2023.04</span>
           </div>
-          <div class="desc"></div>
+          <div class="desc">Implement features and fix bugs on web and mobile</div>
           <ul class="job-desc-list">
-            <li></li>
+            <li>Launch a campaign to train other engineers on correct way of implementing i18n</li>
+            <li>
+              Rearchitect parts of the code so they're significantly more readable, testable, and
+              portable across mobile and web
+            </li>
+            <li>
+              Significantly improve the type definition to reduce bugs, improve readability and
+              feature implementation time
+            </li>
           </ul>
         </div>
 
         <div class="section">
           <div class="h3-row">
             <h3>Meta: Web3 Services</h3>
-            <span class="title">Software Engineer / 2021.10 – Present</span>
+            <span class="title">Software Engineer / 2021.10 – 2022.10</span>
           </div>
           <div class="desc">
             Build the necessary tools as the company transitions from Web 2 to Web 3
@@ -234,15 +222,11 @@
 
         <div class="section">
           <div class="h3-row">
-            <h3>
-              A service that lets users practice infinite number of math problem in preparation for
-              standardized math tests.
-            </h3>
+            <h3>MathTestNinja</h3>
             <span class="title">Full Stack Developer / 2018.12 – Present </span>
           </div>
           <div class="desc">
-            A service that lets users practice infinite number of math problem in preparation for
-            standardized math tests.
+            It lets users practice infinite number of math problems for standardized math tests.
           </div>
           <ul class="job-desc-list">
             <li>
@@ -253,8 +237,27 @@
             <li>Uses third party (Stripe) JS library and API calls to securely process payment</li>
           </ul>
         </div>
-
-        <h2>Projects</h2>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="col-1">
+        <div class="section">
+          <h2>MISC</h2>
+          <ul class="hash-list">
+            <li>
+              Places in the top percentiles in various JavaScript assessments, such as LinkedIn,
+              TopTal, TripleByte, etc.
+            </li>
+            <li>
+              Having been a private tutor for 9 years, I care deeply about how and why people
+              encounter hindrance in accessing information. This care has been translated into my
+              passion for creating intuitive UI/UX/translations of a web page
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-2">
+        <h2 class="margin-top">Projects</h2>
 
         <div class="section">
           <h3>Arraze</h3>
@@ -298,67 +301,93 @@
     </div>
   </div>
 </template>
+<style lang="sass">
+body
+  background-color: rgb(82, 86, 89) !important
+  font-size: 14px
+  --jko-blue: rgb(220 230 242)
+  --jko-highlight: rgb(43 83 132)
+</style>
+<style scoped lang="sass">
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+h1
+  font-size: 40px
+h2
+  font-size: 18px
+h3
+  font-size: 16px
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+.section
+  font-size: 12px
+  color: aaa
+.background
+  transform: scale(0.8)
+.paper
+  background: white
+  width:  8.5in
+  height: 11in
+  margin: 50px auto
+  padding: 0.25in
+  display: grid
+  grid-template-columns: 2.25in 5.5in
+  grid-gap: .25in
+  line-height: 1.25
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+.section
+  position: relative
+  z-index: 1
+  margin-bottom: 0.125in
+  line-height: 1.7
+.main
+  margin-top: 0.125in
+  height: 2.25in
+  top: -0.125in
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    width: calc(100% + 0.25in)
+    height: calc(100% + 0.25in)
+    left: -0.125in
+    top: -0.125in
+    background-color: var(--jko-blue)
+    z-index: -1
+.contact-list
+  margin-top: 13px
+  a
+    color: var(--jko-highlight)
+    display: inline-block
+    border-bottom: 1px solid rgb(141 173 212)
+    &:hover
+      border-bottom: 1px solid var(--jko-highlight)
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
+.slash-list li
+  display: inline
+  word-break: break-all
+  &:first-child:before
+    display: inline
+  &:not(:first-child):before
+    content: ' / '
+    display: inline
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
+.h3-row
+  display: flex
+  justify-content: space-between
+  align-items: center
+.title
+  color: var(--jko-highlight)
+.desc
+  font-style: italic
+.job-desc-list
+  list-style-type: square
+  padding-left: 20px
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
+@media print
+  .paper
+    margin: 0
+  .background
+    transform: scale(1)
 
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
+.main:after
+  background-color: var(--jko-blue)
 </style>
