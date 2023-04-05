@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
+    "deploy": "firebase deploy --only hosting:j-ko-dev",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
@@ -14,6 +15,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "firebase": "^9.19.1",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
