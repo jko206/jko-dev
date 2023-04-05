@@ -348,8 +348,6 @@ h3
 .section
   font-size: 12px
   color: aaa
-.background
-  transform: scale(0.8)
 .paper
   background: white
   width:  8.5in
