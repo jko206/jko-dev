@@ -9,31 +9,31 @@
           <h2>Software Developer</h2>
           <ul class="contact-list">
             <li>
-              <a href="">
+              <a href="https://j-ko.dev">
                 <img src="" alt="" class="contact-ion" />
                 J-Ko.dev
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="mailto:206jko@gmail.com">
                 <img src="" alt="" class="contact-ion" />
                 206jko@gmail.com
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="tel:+14252205899">
                 <img src="" alt="" class="contact-ion" />
                 +1.425.220.5899
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="https://Github.com/jko206">
                 <img src="" alt="" class="contact-ion" />
                 Github.com/jko206
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="https://LinkedIn.com/in/jai-ko">
                 <img src="" alt="" class="contact-ion" />
                 LinkedIn.com/in/jai-ko
               </a>
@@ -126,14 +126,15 @@
           </div>
           <div class="desc">Implement features and fix bugs on web and mobile</div>
           <ul class="job-desc-list">
-            <li>Launch a campaign to train other engineers on correct way of implementing i18n</li>
             <li>
-              Rearchitect parts of the code so they're significantly more readable, testable, and
-              portable across mobile and web
+              Launch a campaign to <strong>train other engineers</strong> on correct way of
+              implementing i18n
             </li>
             <li>
-              Significantly improve the type definition to reduce bugs, improve readability and
-              feature implementation time
+              <strong>Rearchitected</strong> and <strong>improved type</strong> across mobile and
+              web to significantly <strong>reduce bugs</strong> and
+              <strong>enhance readability</strong>, <strong>testability</strong>, and
+              <strong>portability</strong>
             </li>
           </ul>
         </div>
@@ -148,14 +149,25 @@
           </div>
           <ul class="job-desc-list">
             <li>
-              Create an internal tool similar to OpenSea.io that enabled users to view information
-              on NFT and blockchain addresses
+              Create an <strong>internal tool</strong> similar to <strong>OpenSea.io</strong> that
+              enabled users to view information on NFT and blockchain addresses
             </li>
             <li>
-              Actively engage wide range of teams to scope out their needs and prioritize features
-              that had the largest impact to the business
+              Actively engage wide range of teams to <strong>scope out their needs</strong> and
+              <strong>prioritize features</strong> that had the largest
+              <strong>impact to the business</strong>
             </li>
-            <li>Write GraphQL queries that enables searching for NFTs by different attributes</li>
+            <li>
+              <strong>Write GraphQL</strong> queries that enables searching for NFTs by different
+              attributes
+            </li>
+            <li>
+              <strong>Rearchitect</strong> the internal tool as more teams added features and tools
+              onto it
+            </li>
+            <li>
+              <strong>Teach and guide interns</strong> through their technical and career journey
+            </li>
           </ul>
         </div>
 
@@ -168,20 +180,28 @@
             Develop the console and the infrastructure behind it for the Elastic Load Balancing org
           </div>
           <ul class="job-desc-list">
-            <li>Rebuild the console written in GWT with internally developed React components</li>
             <li>
-              Use RxJS and Redux to manage the internal state of the app and to communicate with the
-              backend
+              <strong>Rebuild the console</strong> written in GWT with internally developed React
+              component library
             </li>
-            <li>Write and maintain end-to-end (E2E) tests as well as component tests</li>
             <li>
-              Respond to customer inquiries and requests, both internal and external, including
-              emergencies
+              <strong>Use RxJS and Redux</strong> to manage the internal state of the app and to
+              communicate with the backend
             </li>
-            <li>Monitor and maintain the CI/CD pipeline for smooth worldwide deployment</li>
             <li>
-              Write and improve various internal docs that reduced onboarding time from 6 weeks to 1
-              week
+              Write and maintain <strong>end-to-end (E2E) tests</strong> as well as component tests
+            </li>
+            <li>
+              <strong>Respond to inquiries and requests</strong> from both internal and external
+              customers, including emergencies
+            </li>
+            <li>
+              Monitor and <strong>maintain the CI/CD pipeline</strong> for smooth worldwide
+              deployment
+            </li>
+            <li>
+              Write and improve various internal docs that reduced onboarding time from
+              <strong>6 weeks to 1 week</strong>
             </li>
           </ul>
         </div>
@@ -194,28 +214,21 @@
           <div class="desc">Develop an app for the internal bookkeepers</div>
           <ul class="job-desc-list">
             <li>
-              Overhaul the internal dashboard page that displays thousands of customer statuses with
-              details about their work completion, assignee, and other information
+              <strong>Overhaul the internal dashboard</strong> that displays thousands of customer
+              statuses with details about their work completion, assignee, and other information
             </li>
             <li>
-              Develop / test pixel-perfect UI based on design using Vue / SASS / Jest / Vue test
-              util
+              <strong>Develop / test pixel-perfect UI</strong> based on design using Vue / SASS /
+              Jest / Vue test util
             </li>
             <li>
-              Communicate with stakeholders such as designers and Product Specialists to improve
-              existing UI and initiate new projects
+              <strong>Communicate with stakeholders</strong> such as designers and Product
+              Specialists to improve existing UI and initiate new projects
             </li>
-            <li>Address bugs and comments with short turnarounds</li>
+            <li><strong>Address bugs and comments</strong> with short turnarounds</li>
             <li>
-              Make asynchronous (AJAX) calls to REST API via JavaScript Promise to update pages
-            </li>
-            <li>
-              Optimize pre-existing codebase by modernizing code base with the newest standard of
+              <strong>Optimize and modernize codebase</strong> with the newest standard of
               HTML/JavaScript/CSS and adding greater test coverage
-            </li>
-            <li>
-              Document progress, accomplishments, and technical specs for added features and
-              debugging
             </li>
           </ul>
         </div>
@@ -230,11 +243,17 @@
           </div>
           <ul class="job-desc-list">
             <li>
-              Planned, designed, and coded it from scratch, based on 9 years of teaching experience
+              <strong>Planned</strong>, <strong>designed</strong>, and <strong>coded</strong> it
+              from scratch, based on 9 years of teaching experience
             </li>
-            <li>Single Page Application (SPA); loads partial contents as needed</li>
-            <li>Collect user information and metrics with Firestore</li>
-            <li>Uses third party (Stripe) JS library and API calls to securely process payment</li>
+            <li>
+              Built as a <strong>Single Page Application</strong>, and uses
+              <strong>Firestore</strong> for backend needs
+            </li>
+            <li>
+              <strong>Uses third party JS library and API</strong> from Stripe to securely process
+              payment
+            </li>
           </ul>
         </div>
       </div>
@@ -247,6 +266,10 @@
             <li>
               Places in the top percentiles in various JavaScript assessments, such as LinkedIn,
               TopTal, TripleByte, etc.
+            </li>
+            <li>
+              I write self-documenting code. Generally speaking, if I have to write comments, then
+              there's probably a better way to write the code.
             </li>
             <li>
               Having been a private tutor for 9 years, I care deeply about how and why people
@@ -369,6 +392,10 @@ h3
   &:not(:first-child):before
     content: ' / '
     display: inline
+  &.de-emphasized
+    color: gray
+    &:before
+      color: black
 
 .h3-row
   display: flex
