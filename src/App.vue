@@ -419,4 +419,5 @@ h3
     transform: scale(1)
   .main:after
     background-color: var(--jko-blue)
+    print-color-adjust: exact
 </style>
