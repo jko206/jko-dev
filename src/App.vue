@@ -50,7 +50,10 @@
           <h2>Education</h2>
           <h3>U of Washington, Seattle</h3>
           <ul class="plain-list">
-            <li>Mathematics B.S.</li>
+            <li class="flex justify-between">
+              <span>Mathematics B.S.</span>
+              <span class="small-text">(discontinued)</span>
+            </li>
             <li>Computer science focused</li>
           </ul>
         </div>
@@ -262,7 +265,7 @@
       <div class="col-1">
         <div class="section">
           <h2>MISC</h2>
-          <ul class="hash-list">
+          <ul class="job-desc-list">
             <li>
               Places in the top percentiles in various JavaScript assessments, such as LinkedIn,
               TopTal, TripleByte, etc.
@@ -274,7 +277,7 @@
             <li>
               Having been a private tutor for 9 years, I care deeply about how and why people
               encounter hindrance in accessing information. This care has been translated into my
-              passion for creating intuitive UI/UX/translations of a web page
+              passion for creating intuitive UI/UX.
             </li>
           </ul>
         </div>
@@ -339,7 +342,9 @@ h2
   font-size: 18px
 h3
   font-size: 16px
-
+.small-text
+  font-size: 9px
+  color: gray
 .section
   font-size: 12px
   color: aaa
@@ -414,7 +419,6 @@ h3
     margin: 0
   .background
     transform: scale(1)
-
-.main:after
-  background-color: var(--jko-blue)
+  .main:after
+    background-color: var(--jko-blue)
 </style>
