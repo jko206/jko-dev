@@ -8,7 +8,11 @@
         Paper
       </button>
     </div>
-    <div class="paper">
+    <div
+      @mouseover="() => setPaperHovering(true)"
+      @mouseleave="() => setPaperHovering(false)"
+      :class="['paper', { hover: isPaperHovering }]"
+    >
       <div class="col-1">
         <div class="section main">
           <h1 class="name">J Ko</h1>
@@ -267,7 +271,11 @@
         </div>
       </div>
     </div>
-    <div class="paper">
+    <div
+      @mouseover="() => setPaperHovering(true)"
+      @mouseleave="() => setPaperHovering(false)"
+      :class="['paper', 'paper-bg', { hover: isPaperHovering }]"
+    >
       <div class="col-1">
         <div class="section">
           <h2>Miscellaneous</h2>
@@ -337,18 +345,21 @@
 import { ref } from 'vue'
 
 const isInteractive = ref(false)
+const isPaperHovering = ref(false)
 
 setTimeout(() => {
   isInteractive.value = true
 }, 3_000)
 
 const setInteractive = (val: boolean) => (isInteractive.value = val)
+const setPaperHovering = (val: boolean) => (isPaperHovering.value = val)
 </script>
 <style lang="sass">
 body
   background-color: rgb(82, 86, 89) !important
   font-size: 14px
   --jko-blue: rgb(220 230 242)
+  --jko-blue-muted: rgb(106 128 154)
   --jko-highlight: rgb(43 83 132)
 </style>
 <style scoped lang="sass">
@@ -374,6 +385,9 @@ h3
   grid-template-columns: 2.25in 5.5in
   grid-gap: .25in
   line-height: 1.25
+  transition: margin 2s, padding 2s, width 2s, height 2s, grid-template-columns 2s, background-color 0.2s
+
+.col2
   transition: all 2s
 
 .section
@@ -381,10 +395,12 @@ h3
   z-index: 1
   margin-bottom: 0.125in
   line-height: 1.7
+  transition: width 2s, all 0.2s
 .main
   margin-top: 0.125in
   height: 2.25in
   top: -0.125in
+  transition: all 0.2s
   &:after
     content: ''
     display: block
@@ -394,6 +410,7 @@ h3
     left: -0.125in
     top: -0.125in
     background-color: var(--jko-blue)
+    transition: background-color 0.2s
     z-index: -1
 .contact-list
   margin-top: 13px
@@ -468,8 +485,22 @@ h3
     padding-top: 0
     width: 1000px
     grid-template-columns: 1fr 2fr
+    &.hover
+      background: gray
+      .main:after
+        background: var(--jko-blue-muted)
+      .main:hover:after
+        background: var(--jko-blue)
 
   .paper:nth-child(3) .col-1
     top: -88px
     position: relative
+  .col-2
+    .section:hover
+      @apply p-3 rounded-lg
+      transform: scale(1.05)
+      background: white
+  .hover
+    .de-emphasized
+      color: black
 </style>
