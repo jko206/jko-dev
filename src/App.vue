@@ -1,7 +1,13 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div class="background">
+  <div :class="['background', { interactive: isInteractive }]">
+    <div class="controls flex justify-center space-x-5 p-2">
+      <button @click="() => setInteractive(true)" :class="['control', { active: isInteractive }]">
+        Interactive
+      </button>
+      <button @click="() => setInteractive(false)" :class="['control', { active: !isInteractive }]">
+        Paper
+      </button>
+    </div>
     <div class="paper">
       <div class="col-1">
         <div class="section main">
@@ -264,7 +270,7 @@
     <div class="paper">
       <div class="col-1">
         <div class="section">
-          <h2>MISC</h2>
+          <h2>Miscellaneous</h2>
           <ul class="job-desc-list">
             <li>
               Places in the top percentiles in various JavaScript assessments, such as LinkedIn,
@@ -327,6 +333,17 @@
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const isInteractive = ref(false)
+
+setTimeout(() => {
+  isInteractive.value = true
+}, 3_000)
+
+const setInteractive = (val: boolean) => (isInteractive.value = val)
+</script>
 <style lang="sass">
 body
   background-color: rgb(82, 86, 89) !important
@@ -347,17 +364,17 @@ h3
   color: gray
 .section
   font-size: 12px
-  color: aaa
 .paper
   background: white
   width:  8.5in
   height: 11in
-  margin: 50px auto
+  margin: 80px auto
   padding: 0.25in
   display: grid
   grid-template-columns: 2.25in 5.5in
   grid-gap: .25in
   line-height: 1.25
+  transition: all 2s
 
 .section
   position: relative
@@ -389,7 +406,7 @@ h3
 
 .slash-list li
   display: inline
-  word-break: break-all
+  word-break: break-word
   &:first-child:before
     display: inline
   &:not(:first-child):before
@@ -399,6 +416,10 @@ h3
     color: gray
     &:before
       color: black
+
+.col-1
+  top: 0
+  transition: all 2s
 
 .h3-row
   display: flex
@@ -420,4 +441,35 @@ h3
   .main:after
     background-color: var(--jko-blue)
     print-color-adjust: exact
+  .controls
+    display: none
+
+.controls
+  transition: max-height 2s
+  position: absolute
+  top: 0
+  height: 50px
+  background: darkgray
+  width: 100%
+
+  .control
+    @apply py-1 px-3 rounded-md bg-white
+    &.active
+      @apply bg-blue-500 text-white
+
+.interactive
+  .paper:nth-child(2)
+    margin: 50px auto 0
+    padding-bottom: 0
+    padding-top: 0.25in
+  .paper
+    margin: 0 auto
+    height: auto
+    padding-top: 0
+    width: 1000px
+    grid-template-columns: 1fr 2fr
+
+  .paper:nth-child(3) .col-1
+    top: -88px
+    position: relative
 </style>
