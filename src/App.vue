@@ -1,17 +1,17 @@
 <template>
   <div :class="['background', { interactive: isInteractive }]">
     <div class="controls flex justify-center space-x-5 p-2">
-      <button @click="() => setInteractive(true)" :class="['control', { active: isInteractive }]">
-        Interactive
-      </button>
       <button @click="() => setInteractive(false)" :class="['control', { active: !isInteractive }]">
         Paper
+      </button>
+      <button @click="() => setInteractive(true)" :class="['control', { active: isInteractive }]">
+        Interactive
       </button>
     </div>
     <div
       @mouseover="() => setPaperHovering(true)"
       @mouseleave="() => setPaperHovering(false)"
-      :class="['paper', { hover: isPaperHovering }]"
+      :class="['paper', { hover: isHoveringOverPaper }]"
     >
       <div class="col-1">
         <div class="section main">
@@ -274,7 +274,7 @@
     <div
       @mouseover="() => setPaperHovering(true)"
       @mouseleave="() => setPaperHovering(false)"
-      :class="['paper', 'paper-bg', { hover: isPaperHovering }]"
+      :class="['paper', { hover: isHoveringOverPaper }]"
     >
       <div class="col-1">
         <div class="section">
@@ -345,14 +345,14 @@
 import { ref } from 'vue'
 
 const isInteractive = ref(false)
-const isPaperHovering = ref(false)
+const isHoveringOverPaper = ref(false)
 
 setTimeout(() => {
   isInteractive.value = true
 }, 3_000)
 
 const setInteractive = (val: boolean) => (isInteractive.value = val)
-const setPaperHovering = (val: boolean) => (isPaperHovering.value = val)
+const setPaperHovering = (val: boolean) => (isHoveringOverPaper.value = val)
 </script>
 <style lang="sass">
 body
@@ -385,22 +385,22 @@ h3
   grid-template-columns: 2.25in 5.5in
   grid-gap: .25in
   line-height: 1.25
-  transition: margin 2s, padding 2s, width 2s, height 2s, grid-template-columns 2s, background-color 0.2s
+  transition: margin 1s, padding 1s, width 1s, height 1s, grid-template-columns 1s, background-color 0.1s
 
 .col2
-  transition: all 2s
+  transition: all 1s
 
 .section
   position: relative
   z-index: 1
   margin-bottom: 0.125in
   line-height: 1.7
-  transition: width 2s, all 0.2s
+  transition: width 1s, all 0.1s
 .main
   margin-top: 0.125in
   height: 2.25in
   top: -0.125in
-  transition: all 0.2s
+  transition: all 0.1s
   &:after
     content: ''
     display: block
@@ -410,7 +410,7 @@ h3
     left: -0.125in
     top: -0.125in
     background-color: var(--jko-blue)
-    transition: background-color 0.2s
+    transition: background-color 0.1s
     z-index: -1
 .contact-list
   margin-top: 13px
@@ -436,7 +436,7 @@ h3
 
 .col-1
   top: 0
-  transition: all 2s
+  transition: all 1s
 
 .h3-row
   display: flex
@@ -462,7 +462,7 @@ h3
     display: none
 
 .controls
-  transition: max-height 2s
+  transition: max-height 1s
   position: absolute
   top: 0
   height: 50px
