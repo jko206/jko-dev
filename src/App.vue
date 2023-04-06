@@ -71,60 +71,77 @@
         <div class="section">
           <h2>Language / Frameworks</h2>
           <ul class="slash-list">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>Flow</li>
-            <li>ES6+</li>
-            <li>Vue</li>
-            <li>React</li>
-            <li>Redux</li>
-            <li>jQuery</li>
-            <li>SASS</li>
-            <li>SCSS</li>
-            <li>jest</li>
-            <li class="de-emphasized">GraphQL</li>
-            <li class="de-emphasized">RxJS</li>
-            <li class="de-emphasized">Google Web Toolkit(GWT)</li>
-            <li class="de-emphasized">PHP</li>
-            <li class="de-emphasized">Hack</li>
-            <li class="de-emphasized">Java</li>
-            <li class="de-emphasized">NodeJS</li>
-            <li class="de-emphasized">MySQL</li>
+            <li :class="{ active: highlightedSkill.includes('html') }">HTML</li>
+            <li :class="{ active: highlightedSkill.includes('css') }">CSS</li>
+            <li :class="{ active: highlightedSkill.includes('js') }">JavaScript</li>
+            <li :class="{ active: highlightedSkill.includes('ts') }">TypeScript</li>
+            <li :class="{ active: highlightedSkill.includes('flow') }">Flow</li>
+            <li :class="{ active: highlightedSkill.includes('es6') }">ES6+</li>
+            <li :class="{ active: highlightedSkill.includes('vue') }">Vue</li>
+            <li :class="{ active: highlightedSkill.includes('react') }">React</li>
+            <li :class="{ active: highlightedSkill.includes('redux') }">Redux</li>
+            <li :class="{ active: highlightedSkill.includes('jquery') }">jQuery</li>
+            <li :class="{ active: highlightedSkill.includes('sass') }">SASS</li>
+            <li :class="{ active: highlightedSkill.includes('scss') }">SCSS</li>
+            <li :class="{ active: highlightedSkill.includes('jest') }">jest</li>
+            <li :class="{ active: highlightedSkill.includes('tail') }">TailwindCss</li>
+            <li :class="{ active: highlightedSkill.includes('gql') }" class="de-emphasized">
+              GraphQL
+            </li>
+            <li :class="{ active: highlightedSkill.includes('rxjs') }" class="de-emphasized">
+              RxJS
+            </li>
+            <li :class="{ active: highlightedSkill.includes('gwt') }" class="de-emphasized">
+              Google Web Toolkit(GWT)
+            </li>
+            <li :class="{ active: highlightedSkill.includes('php') }" class="de-emphasized">PHP</li>
+            <li :class="{ active: highlightedSkill.includes('hack') }" class="de-emphasized">
+              Hack
+            </li>
+            <li :class="{ active: highlightedSkill.includes('java') }" class="de-emphasized">
+              Java
+            </li>
+            <li :class="{ active: highlightedSkill.includes('node') }" class="de-emphasized">
+              NodeJS
+            </li>
+            <li :class="{ active: highlightedSkill.includes('mysql') }" class="de-emphasized">
+              MySQL
+            </li>
           </ul>
         </div>
 
         <div class="section">
           <h2>Concepts / Paradigms</h2>
           <ul class="slash-list">
-            <li>OOP</li>
-            <li>Responsive design</li>
-            <li>SPA</li>
-            <li>Flux pattern</li>
-            <li>Hooks</li>
-            <li>Algorithm</li>
-            <li>Data structure</li>
-            <li>Functional programming</li>
-            <li>User interface (UI)</li>
-            <li>User experience (UX)</li>
-            <li>Internationalization (i18n)</li>
-            <li>REST API</li>
-            <li>Test driven design (TDD)</li>
-            <li>Unit testing</li>
-            <li>E2E testing</li>
+            <li :class="{ active: highlightedSkill.includes('oop') }">OOP</li>
+            <li :class="{ active: highlightedSkill.includes('resp') }">Responsive design</li>
+            <li :class="{ active: highlightedSkill.includes('spa') }">SPA</li>
+            <li :class="{ active: highlightedSkill.includes('flux') }">Flux pattern</li>
+            <li :class="{ active: highlightedSkill.includes('hook') }">Hooks</li>
+            <li :class="{ active: highlightedSkill.includes('algo') }">Algorithm</li>
+            <li :class="{ active: highlightedSkill.includes('ds') }">Data structure</li>
+            <li :class="{ active: highlightedSkill.includes('fp') }">Functional programming</li>
+            <li :class="{ active: highlightedSkill.includes('ui') }">User interface (UI)</li>
+            <li :class="{ active: highlightedSkill.includes('ux') }">User experience (UX)</li>
+            <li :class="{ active: highlightedSkill.includes('i18n') }">
+              Internationalization (i18n)
+            </li>
+            <li :class="{ active: highlightedSkill.includes('rest') }">REST API</li>
+            <li :class="{ active: highlightedSkill.includes('tdd') }">Test driven design (TDD)</li>
+            <li :class="{ active: highlightedSkill.includes('unit') }">Unit testing</li>
+            <li :class="{ active: highlightedSkill.includes('e2e') }">E2E testing</li>
           </ul>
         </div>
 
         <div class="section">
           <h2>Tools</h2>
           <ul class="slash-list">
-            <li>npm</li>
-            <li>webpack</li>
-            <li>Firebase</li>
-            <li>git</li>
-            <li>Vue-related tools</li>
-            <li>mobile-dev tools</li>
+            <li :class="{ active: highlightedSkill.includes('npm') }">npm</li>
+            <li :class="{ active: highlightedSkill.includes('webpack') }">webpack</li>
+            <li :class="{ active: highlightedSkill.includes('firebase') }">Firebase</li>
+            <li :class="{ active: highlightedSkill.includes('git') }">git</li>
+            <li :class="{ active: highlightedSkill.includes('vue-tools') }">Vue-related tools</li>
+            <li :class="{ active: highlightedSkill.includes('mobile') }">mobile-dev tools</li>
           </ul>
         </div>
       </div>
@@ -132,7 +149,11 @@
       <div class="col-2">
         <h2>Experience</h2>
 
-        <div class="section">
+        <div
+          class="section"
+          @mouseenter="() => (highlightedSkill = skillsUsed.rippling)"
+          @mouseleave="() => (highlightedSkill = [])"
+        >
           <div class="h3-row">
             <h3>Rippling</h3>
             <span class="title">Senior Software Engineer / 2022.10 - 2023.04</span>
@@ -152,7 +173,11 @@
           </ul>
         </div>
 
-        <div class="section">
+        <div
+          class="section"
+          @mouseenter="() => (highlightedSkill = skillsUsed.meta)"
+          @mouseleave="() => (highlightedSkill = [])"
+        >
           <div class="h3-row">
             <h3>Meta: Web3 Services</h3>
             <span class="title">Software Engineer / 2021.10 – 2022.10</span>
@@ -184,7 +209,11 @@
           </ul>
         </div>
 
-        <div class="section">
+        <div
+          class="section"
+          @mouseenter="() => (highlightedSkill = skillsUsed.amazon)"
+          @mouseleave="() => (highlightedSkill = [])"
+        >
           <div class="h3-row">
             <h3>Amazon Web Services: EC2 Networking</h3>
             <span class="title">Software Engineer / 2020.03 – 2021.10</span>
@@ -219,7 +248,11 @@
           </ul>
         </div>
 
-        <div class="section">
+        <div
+          class="section"
+          @mouseenter="() => (highlightedSkill = skillsUsed.pilot)"
+          @mouseleave="() => (highlightedSkill = [])"
+        >
           <div class="h3-row">
             <h3>Pilot.com</h3>
             <span class="title">Software Engineer / 2019.03 – 2020.01</span>
@@ -246,7 +279,11 @@
           </ul>
         </div>
 
-        <div class="section">
+        <div
+          class="section"
+          @mouseenter="() => (highlightedSkill = skillsUsed.mtn)"
+          @mouseleave="() => (highlightedSkill = [])"
+        >
           <div class="h3-row">
             <h3>MathTestNinja</h3>
             <span class="title">Full Stack Developer / 2018.12 – Present </span>
@@ -342,10 +379,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 
 const isInteractive = ref(false)
 const isHoveringOverPaper = ref(false)
+const highlightedSkill = ref<string[]>([])
 
 setTimeout(() => {
   isInteractive.value = true
@@ -353,6 +391,41 @@ setTimeout(() => {
 
 const setInteractive = (val: boolean) => (isInteractive.value = val)
 const setPaperHovering = (val: boolean) => (isHoveringOverPaper.value = val)
+
+const skillsUsed = {
+  rippling: [
+    'ts',
+    'react',
+    'jest',
+    'hooks',
+    'flux',
+    'ui',
+    'ux',
+    'e2e',
+    'unit',
+    'rest',
+    'i18n',
+    'mobile'
+  ],
+  meta: ['flow', 'react', 'gql', 'ui', 'ux', 'hooks', 'e2e', 'unit', 'hack', 'php'],
+  amazon: [
+    'ts',
+    'react',
+    'jest',
+    'hooks',
+    'redux',
+    'rxjs',
+    'ui',
+    'ux',
+    'e2e',
+    'unit',
+    'rest',
+    'i18n',
+    'gwt'
+  ],
+  pilot: ['vue', 'scss', 'sass', 'html', 'spa', 'vue-tools', 'e2e', 'jest', 'unit', 'resp'],
+  mtn: ['vue', 'vue-tools', 'ui', 'ux', 'spa', 'scss', 'tail']
+}
 </script>
 <style lang="sass">
 body
@@ -491,6 +564,10 @@ h3
         background: var(--jko-blue-muted)
       .main:hover:after
         background: var(--jko-blue)
+      li.active
+        color: white
+        &:before
+          color: black
 
   .paper:nth-child(3) .col-1
     top: -88px
