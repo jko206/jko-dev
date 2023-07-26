@@ -158,7 +158,9 @@
             <h3>Rippling</h3>
             <span class="title">Senior Software Engineer / 2022.10 - 2023.04</span>
           </div>
-          <div class="desc">Implement features and fix bugs on web and mobile</div>
+          <div class="desc">
+            Implement features and fix bugs on web and mobile using React and React Native
+          </div>
           <ul class="job-desc-list">
             <li>
               Launch a campaign to <strong>train other engineers</strong> on correct way of
@@ -183,7 +185,8 @@
             <span class="title">Software Engineer / 2021.10 – 2022.10</span>
           </div>
           <div class="desc">
-            Build the necessary tools as the company transitions from Web 2 to Web 3
+            Build the necessary tools as the company transitions from Web 2 to Web 3 using React,
+            Flow, and HackLang.
           </div>
           <ul class="job-desc-list">
             <li>
