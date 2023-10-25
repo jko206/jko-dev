@@ -53,7 +53,7 @@
 
         <div class="section">
           <h2>Introduction</h2>
-          <div>A computer is only as good as how easy it is to use it; I make that happen.</div>
+          <div>I make computer easier to use</div>
         </div>
 
         <div class="section">
@@ -84,7 +84,7 @@
             <li :class="{ active: highlightedSkill.includes('sass') }">SASS</li>
             <li :class="{ active: highlightedSkill.includes('scss') }">SCSS</li>
             <li :class="{ active: highlightedSkill.includes('jest') }">jest</li>
-            <li :class="{ active: highlightedSkill.includes('tail') }">TailwindCss</li>
+            <li :class="{ active: highlightedSkill.includes('tail') }">Tailwind CSS</li>
             <li :class="{ active: highlightedSkill.includes('gql') }" class="de-emphasized">
               GraphQL
             </li>
@@ -151,6 +151,38 @@
 
         <div
           class="section"
+          @mouseenter="() => (highlightedSkill = skillsUsed.mtn)"
+          @mouseleave="() => (highlightedSkill = [])"
+        >
+          <div class="h3-row">
+            <h3>MathTestNinja</h3>
+            <span class="title">Full Stack Developer / 2023.06 – Present </span>
+          </div>
+          <div class="desc">
+            It lets users practice infinite number of math problems for standardized math tests.
+          </div>
+          <ul class="job-desc-list">
+            <li>
+              <strong>Build from scratch</strong> Planned, designed, and coded it based on 9 years
+              of teaching experience
+            </li>
+            <li>
+              <strong> Infrastructure</strong> Built with Firebase for authentication, database, and
+              hosting
+            </li>
+            <li>
+              <strong>Build mailing list</strong> Built pipeline with Google Cloud Functions and
+              Mailchimp
+            </li>
+            <li>
+              <strong>Process payments</strong>
+              Integrate Stripe for subscription payment processing.
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="section"
           @mouseenter="() => (highlightedSkill = skillsUsed.rippling)"
           @mouseleave="() => (highlightedSkill = [])"
         >
@@ -163,14 +195,17 @@
           </div>
           <ul class="job-desc-list">
             <li>
-              Launch a campaign to <strong>train other engineers</strong> on correct way of
-              implementing i18n
+              <strong>Rearchitect</strong> Refactored the common logic from web and mobile into
+              React hooks that can be used across both platforms, and improved TypeScript
+              definitions
             </li>
             <li>
-              <strong>Rearchitected</strong> and <strong>improved type</strong> across mobile and
-              web to significantly <strong>reduce bugs</strong> and
-              <strong>enhance readability</strong>, <strong>testability</strong>, and
-              <strong>portability</strong>
+              <strong>Improve testability</strong> Rewrote critical functions to be testable and
+              more readable
+            </li>
+            <li>
+              <strong>Train others</strong> Launched a campaign on correctly implementing i18n and
+              taught others TypeScript and its importance
             </li>
           </ul>
         </div>
@@ -185,29 +220,25 @@
             <span class="title">Software Engineer / 2021.10 – 2022.10</span>
           </div>
           <div class="desc">
-            Build the necessary tools as the company transitions from Web 2 to Web 3 using React,
-            Flow, and HackLang.
+            Build the internal platform as the company transitions from Web 2 to Web 3 using React,
+            Flow, GraphQL and HackLang.
           </div>
           <ul class="job-desc-list">
             <li>
-              Create an <strong>internal tool</strong> similar to <strong>OpenSea.io</strong> that
-              enabled users to view information on NFT and blockchain addresses
+              <strong>Engage and plan</strong> Actively engaged other teams to scope out needs and
+              prioritize features with largest business impact
             </li>
             <li>
-              Actively engage wide range of teams to <strong>scope out their needs</strong> and
-              <strong>prioritize features</strong> that had the largest
-              <strong>impact to the business</strong>
+              <strong>Build platform</strong> Built an internal tool for querying and displaying
+              NFTs
             </li>
             <li>
-              <strong>Write GraphQL</strong> queries that enables searching for NFTs by different
-              attributes
+              <strong>Rearchitect</strong> Transformed a basic querying tool into a platform upon
+              which others can build their own tools
             </li>
             <li>
-              <strong>Rearchitect</strong> the internal tool as more teams added features and tools
-              onto it
-            </li>
-            <li>
-              <strong>Teach and guide interns</strong> through their technical and career journey
+              <strong>Mentor interns</strong> Taught interns technical skills, as well as career
+              planning and growth
             </li>
           </ul>
         </div>
@@ -222,31 +253,35 @@
             <span class="title">Software Engineer / 2020.03 – 2021.10</span>
           </div>
           <div class="desc">
-            Develop the console and the infrastructure behind it for the Elastic Load Balancing org
+            Develop the
+            <a
+              href="https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#LoadBalancers:"
+              target="_blank"
+              class="underline text-blue-500"
+              >console</a
+            >
+            and the infrastructure behind it for the Elastic Load Balancing org
           </div>
           <ul class="job-desc-list">
             <li>
-              <strong>Rebuild the console</strong> written in GWT with internally developed React
-              component library
+              <strong>Rebuild console</strong> Rewrote console previously written in GWT and Angular
+              with internal React library, RxJS, Redux, and TypeScript.
             </li>
             <li>
-              <strong>Use RxJS and Redux</strong> to manage the internal state of the app and to
-              communicate with the backend
+              <strong>Improve testing</strong> Wrote unit, integration, and E2E to tests to maintain
+              bug-free service
             </li>
             <li>
-              Write and maintain <strong>end-to-end (E2E) tests</strong> as well as component tests
+              <strong>Listen and engage</strong> Read internal and external customers' feedback to
+              plan and prioritize features, and catch UI/UX issues not caught by tests
             </li>
             <li>
-              <strong>Respond to inquiries and requests</strong> from both internal and external
-              customers, including emergencies
+              <strong>Manage deployment</strong> Monitored and maintained CI/CD pipeline for smooth
+              worldwide deployment
             </li>
             <li>
-              Monitor and <strong>maintain the CI/CD pipeline</strong> for smooth worldwide
-              deployment
-            </li>
-            <li>
-              Write and improve various internal docs that reduced onboarding time from
-              <strong>6 weeks to 1 week</strong>
+              <strong>Improve onboarding</strong> Reduced onboarding time from 6 weeks to 1 week at
+              the beginning of the pandemic
             </li>
           </ul>
         </div>
@@ -263,49 +298,21 @@
           <div class="desc">Develop an app for the internal bookkeepers</div>
           <ul class="job-desc-list">
             <li>
-              <strong>Overhaul the internal dashboard</strong> that displays thousands of customer
-              statuses with details about their work completion, assignee, and other information
+              <strong>Redo customer dashboard</strong> Revamped the page that displays all customer
+              statuses with details about their work completion, assignee, etc.
             </li>
             <li>
-              <strong>Develop / test pixel-perfect UI</strong> based on design using Vue / SASS /
-              Jest / Vue test util
+              <strong>Build global component</strong> Built a component that can be used across the
+              app to toggle the status of a customer
             </li>
             <li>
-              <strong>Communicate with stakeholders</strong> such as designers and Product
-              Specialists to improve existing UI and initiate new projects
-            </li>
-            <li><strong>Address bugs and comments</strong> with short turnarounds</li>
-            <li>
-              <strong>Optimize and modernize codebase</strong> with the newest standard of
-              HTML/JavaScript/CSS and adding greater test coverage
-            </li>
-          </ul>
-        </div>
-
-        <div
-          class="section"
-          @mouseenter="() => (highlightedSkill = skillsUsed.mtn)"
-          @mouseleave="() => (highlightedSkill = [])"
-        >
-          <div class="h3-row">
-            <h3>MathTestNinja</h3>
-            <span class="title">Full Stack Developer / 2018.12 – Present </span>
-          </div>
-          <div class="desc">
-            It lets users practice infinite number of math problems for standardized math tests.
-          </div>
-          <ul class="job-desc-list">
-            <li>
-              <strong>Planned</strong>, <strong>designed</strong>, and <strong>coded</strong> it
-              from scratch, based on 9 years of teaching experience
+              <strong>Communicate for quick result</strong> Owing to startup nature of the company,
+              talked directly with designers, PMs, devs, and other employees to quickly implement
+              ideas, fix bugs, etc.
             </li>
             <li>
-              Built as a <strong>Single Page Application</strong>, and uses
-              <strong>Firestore</strong> for backend needs
-            </li>
-            <li>
-              <strong>Uses third party JS library and API</strong> from Stripe to securely process
-              payment
+              <strong>Optimize/modernize codebase</strong> Implemented newest standard of
+              HTML/JavaScript/CSS and improved test coverage
             </li>
           </ul>
         </div>
