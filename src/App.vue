@@ -207,6 +207,14 @@
               <strong>Train others</strong> Launched a campaign on correctly implementing i18n and
               taught others TypeScript and its importance
             </li>
+            <!-- <li>
+              <strong>Improve code quality</strong> Rewrote critical functions to be testable and
+              more readable; Used Flipper and other internal tools to debug and fix bugs
+            </li>
+            <li>
+              <strong>Build UI/UX</strong> Implemented i18n; used internal UI library to build and
+              improve features
+            </li> -->
           </ul>
         </div>
 
