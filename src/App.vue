@@ -8,6 +8,10 @@
         Interactive
       </button>
     </div>
+    <!-- 
+    https://chatgpt.com/c/4c764e13-76c7-4042-a049-8a5bbf5aa01a
+    has a lot of the writings for what went into this version of the resume.
+    -->
     <div
       @mouseover="() => setPaperHovering(true)"
       @mouseleave="() => setPaperHovering(false)"
@@ -53,7 +57,7 @@
 
         <div class="section">
           <h2>Introduction</h2>
-          <div>I make computer easier to use</div>
+          <div>Connecting humans and computers</div>
         </div>
 
         <div class="section">
@@ -71,65 +75,51 @@
         <div class="section">
           <h2>Language / Frameworks</h2>
           <ul class="slash-list">
-            <li :class="{ active: highlightedSkill.includes('html') }">HTML</li>
-            <li :class="{ active: highlightedSkill.includes('css') }">CSS</li>
             <li :class="{ active: highlightedSkill.includes('js') }">JavaScript</li>
             <li :class="{ active: highlightedSkill.includes('ts') }">TypeScript</li>
-            <li :class="{ active: highlightedSkill.includes('flow') }">Flow</li>
-            <li :class="{ active: highlightedSkill.includes('es6') }">ES6+</li>
-            <li :class="{ active: highlightedSkill.includes('vue') }">Vue</li>
             <li :class="{ active: highlightedSkill.includes('react') }">React</li>
+            <li :class="{ active: highlightedSkill.includes('node') }">NodeJS</li>
+            <li :class="{ active: highlightedSkill.includes('css') }">CSS</li>
+            <li :class="{ active: highlightedSkill.includes('html') }">HTML</li>
+            <li :class="{ active: highlightedSkill.includes('gql') }">GraphQL</li>
             <li :class="{ active: highlightedSkill.includes('redux') }">Redux</li>
-            <li :class="{ active: highlightedSkill.includes('jquery') }">jQuery</li>
+            <li :class="{ active: highlightedSkill.includes('tail') }">Tailwind CSS</li>
             <li :class="{ active: highlightedSkill.includes('sass') }">SASS</li>
             <li :class="{ active: highlightedSkill.includes('scss') }">SCSS</li>
-            <li :class="{ active: highlightedSkill.includes('jest') }">jest</li>
-            <li :class="{ active: highlightedSkill.includes('tail') }">Tailwind CSS</li>
-            <li :class="{ active: highlightedSkill.includes('gql') }" class="de-emphasized">
-              GraphQL
-            </li>
-            <li :class="{ active: highlightedSkill.includes('rxjs') }" class="de-emphasized">
-              RxJS
-            </li>
-            <li :class="{ active: highlightedSkill.includes('gwt') }" class="de-emphasized">
-              Google Web Toolkit(GWT)
-            </li>
-            <li :class="{ active: highlightedSkill.includes('php') }" class="de-emphasized">PHP</li>
-            <li :class="{ active: highlightedSkill.includes('hack') }" class="de-emphasized">
-              Hack
-            </li>
-            <li :class="{ active: highlightedSkill.includes('java') }" class="de-emphasized">
-              Java
-            </li>
-            <li :class="{ active: highlightedSkill.includes('node') }" class="de-emphasized">
-              NodeJS
-            </li>
-            <li :class="{ active: highlightedSkill.includes('mysql') }" class="de-emphasized">
-              MySQL
-            </li>
+            <li :class="{ active: highlightedSkill.includes('es6') }">ES6+</li>
+            <li :class="{ active: highlightedSkill.includes('es6') }">AWS CDK</li>
+            <li :class="{ active: highlightedSkill.includes('es6') }">Cypress</li>
+            <li :class="{ active: highlightedSkill.includes('es6') }">Playwright</li>
+            <li :class="{ active: highlightedSkill.includes('vue') }">Vue</li>
+            <li :class="{ active: highlightedSkill.includes('java') }">Java</li>
+            <li :class="{ active: highlightedSkill.includes('php') }">PHP</li>
+            <li :class="{ active: highlightedSkill.includes('mysql') }">MySQL</li>
+            <li :class="{ active: highlightedSkill.includes('flow') }">Flow</li>
+            <li :class="{ active: highlightedSkill.includes('hack') }">Hack</li>
+            <li :class="{ active: highlightedSkill.includes('jest') }">Jest</li>
+            <li :class="{ active: highlightedSkill.includes('jest') }">Vitest</li>
           </ul>
         </div>
 
         <div class="section">
           <h2>Concepts / Paradigms</h2>
           <ul class="slash-list">
-            <li :class="{ active: highlightedSkill.includes('oop') }">OOP</li>
-            <li :class="{ active: highlightedSkill.includes('resp') }">Responsive design</li>
-            <li :class="{ active: highlightedSkill.includes('spa') }">SPA</li>
-            <li :class="{ active: highlightedSkill.includes('flux') }">Flux pattern</li>
-            <li :class="{ active: highlightedSkill.includes('hook') }">Hooks</li>
-            <li :class="{ active: highlightedSkill.includes('algo') }">Algorithm</li>
-            <li :class="{ active: highlightedSkill.includes('ds') }">Data structure</li>
-            <li :class="{ active: highlightedSkill.includes('fp') }">Functional programming</li>
-            <li :class="{ active: highlightedSkill.includes('ui') }">User interface (UI)</li>
-            <li :class="{ active: highlightedSkill.includes('ux') }">User experience (UX)</li>
-            <li :class="{ active: highlightedSkill.includes('i18n') }">
-              Internationalization (i18n)
-            </li>
-            <li :class="{ active: highlightedSkill.includes('rest') }">REST API</li>
-            <li :class="{ active: highlightedSkill.includes('tdd') }">Test driven design (TDD)</li>
-            <li :class="{ active: highlightedSkill.includes('unit') }">Unit testing</li>
-            <li :class="{ active: highlightedSkill.includes('e2e') }">E2E testing</li>
+            <li>Functional programming</li>
+            <li>Event-driven architecture</li>
+            <li>Cloud computing</li>
+            <li>Single/Multi Page Application</li>
+            <li>Object oriented programming (OOP)</li>
+            <li>Responsive design</li>
+            <li>Test-driven development</li>
+            <li>React hooks</li>
+            <li>Vue composition</li>
+            <li>Algorithms</li>
+            <li>Data structures</li>
+            <li>User interface (UI)</li>
+            <li>User experience (UX)</li>
+            <li>Internationalization (i18n)</li>
+            <li>Testing (unit / integration / E2E)</li>
+            <li>Continuous integration / continuous deployment (CI/CD)</li>
           </ul>
         </div>
 
@@ -137,11 +127,14 @@
           <h2>Tools</h2>
           <ul class="slash-list">
             <li :class="{ active: highlightedSkill.includes('npm') }">npm</li>
-            <li :class="{ active: highlightedSkill.includes('webpack') }">webpack</li>
-            <li :class="{ active: highlightedSkill.includes('firebase') }">Firebase</li>
+            <li :class="{ active: highlightedSkill.includes('webpack') }">vite</li>
             <li :class="{ active: highlightedSkill.includes('git') }">git</li>
-            <li :class="{ active: highlightedSkill.includes('vue-tools') }">Vue-related tools</li>
-            <li :class="{ active: highlightedSkill.includes('mobile') }">mobile-dev tools</li>
+            <li :class="{ active: highlightedSkill.includes('vue-tools') }">Vue dev tools</li>
+            <li :class="{ active: highlightedSkill.includes('vue-tools') }">React dev tools</li>
+            <li :class="{ active: highlightedSkill.includes('vue-tools') }">Chrome Lighthouse</li>
+            <li :class="{ active: highlightedSkill.includes('copilot') }">GitHub Copilot</li>
+            <li :class="{ active: highlightedSkill.includes('metro') }">Metro</li>
+            <li :class="{ active: highlightedSkill.includes('vs-code') }">VS Code</li>
           </ul>
         </div>
       </div>
@@ -151,32 +144,41 @@
 
         <div
           class="section"
-          @mouseenter="() => (highlightedSkill = skillsUsed.mtn)"
+          @mouseenter="() => (highlightedSkill = skillsUsed.amazon2)"
           @mouseleave="() => (highlightedSkill = [])"
         >
           <div class="h3-row">
-            <h3>MathTestNinja</h3>
-            <span class="title">Full Stack Developer / 2023.06 – Present </span>
+            <h3>Amazon: Corporate Projects Team</h3>
+            <span class="title">Software Engineer / 2024.02 – Present </span>
           </div>
           <div class="desc">
-            It lets users practice infinite number of math problems for standardized math tests.
+            Maintain and enhance the order intake app for an internal division; collaborate with
+            stakeholders to deliver tailored solutions that improve operational efficiency and user
+            experience.
           </div>
           <ul class="job-desc-list">
             <li>
-              <strong>Build from scratch</strong> Planned, designed, and coded it based on 9 years
-              of teaching experience
+              <strong>Develop and optimize file upload</strong> by enabling users to validate and
+              assess 3D files while managing parallel async operations, resolving performance issues
+              through optimized library usage, reducing load times, and enhancing user experience
+              during complex file uploads.
             </li>
             <li>
-              <strong> Infrastructure</strong> Built with Firebase for authentication, database, and
-              hosting
+              <strong>Refactor frontend components</strong> by implementing the reducer pattern,
+              improving code readability, maintainability, and increasing test coverage from 80% to
+              over 95%.
             </li>
             <li>
-              <strong>Build mailing list</strong> Built pipeline with Google Cloud Functions and
-              Mailchimp
+              <strong>Manage timelines and collaborate</strong> in a dynamic environment by
+              initiating early design planning, navigating ambiguous project requirements,
+              coordinating with cross-functional teams, and documenting decisions to ensure smooth
+              and successful project execution.
             </li>
             <li>
-              <strong>Process payments</strong>
-              Integrate Stripe for subscription payment processing.
+              <strong>Leverage a robust tech stack</strong> including React, TypeScript, AWS CDK,
+              AppSync, and Cognito to build and maintain a scalable, secure, and high-performance
+              order intake application, seamlessly integrating with event-driven microservices
+              architecture.
             </li>
           </ul>
         </div>
@@ -295,7 +297,7 @@
         </div>
 
         <div
-          class="section"
+          class="section hidden"
           @mouseenter="() => (highlightedSkill = skillsUsed.pilot)"
           @mouseleave="() => (highlightedSkill = [])"
         >
@@ -354,6 +356,37 @@
       <div class="col-2">
         <h2 class="margin-top">Projects</h2>
 
+        <div
+          class="section"
+          @mouseenter="() => (highlightedSkill = skillsUsed.mtn)"
+          @mouseleave="() => (highlightedSkill = [])"
+        >
+          <div class="h3-row">
+            <h3>MathTestNinja</h3>
+            <span class="title">Full Stack Developer / 2023.06 – 2024.02 </span>
+          </div>
+          <div class="desc">
+            It lets users practice infinite number of math problems for standardized math tests.
+          </div>
+          <ul class="job-desc-list">
+            <li>
+              <strong>Build from scratch</strong> Planned, designed, and coded it based on 9 years
+              of teaching experience
+            </li>
+            <li>
+              <strong> Infrastructure</strong> Built with Firebase for authentication, database, and
+              hosting
+            </li>
+            <li>
+              <strong>Build mailing list</strong> Built pipeline with Google Cloud Functions and
+              Mailchimp
+            </li>
+            <li>
+              <strong>Process payments</strong>
+              Integrate Stripe for subscription payment processing.
+            </li>
+          </ul>
+        </div>
         <div class="section">
           <h3>Arraze</h3>
           <div class="desc">A JavaScript utility library for array manipulation.</div>
@@ -442,7 +475,22 @@ const skillsUsed = {
     'gwt'
   ],
   pilot: ['vue', 'scss', 'sass', 'html', 'spa', 'vue-tools', 'e2e', 'jest', 'unit', 'resp'],
-  mtn: ['vue', 'vue-tools', 'ui', 'ux', 'spa', 'scss', 'tail']
+  mtn: ['vue', 'vue-tools', 'ui', 'ux', 'spa', 'scss', 'tail'],
+  amazon2: [
+    'ts',
+    'react',
+    'jest',
+    'hooks',
+    'redux',
+    'rxjs',
+    'ui',
+    'ux',
+    'e2e',
+    'unit',
+    'rest',
+    'i18n',
+    'eda'
+  ]
 }
 </script>
 <style lang="sass">
