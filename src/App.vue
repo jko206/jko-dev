@@ -78,26 +78,30 @@
             <li :class="{ active: highlightedSkill.includes('js') }">JavaScript</li>
             <li :class="{ active: highlightedSkill.includes('ts') }">TypeScript</li>
             <li :class="{ active: highlightedSkill.includes('react') }">React</li>
+            <li :class="{ active: highlightedSkill.includes('react_native') }">React Native</li>
+            <li :class="{ active: highlightedSkill.includes('expo') }">Expo</li>
+            <li :class="{ active: highlightedSkill.includes('vue') }">Vue</li>
             <li :class="{ active: highlightedSkill.includes('node') }">NodeJS</li>
             <li :class="{ active: highlightedSkill.includes('css') }">CSS</li>
             <li :class="{ active: highlightedSkill.includes('html') }">HTML</li>
             <li :class="{ active: highlightedSkill.includes('gql') }">GraphQL</li>
+            <li :class="{ active: highlightedSkill.includes('relay') }">Relay</li>
             <li :class="{ active: highlightedSkill.includes('redux') }">Redux</li>
             <li :class="{ active: highlightedSkill.includes('tail') }">Tailwind CSS</li>
             <li :class="{ active: highlightedSkill.includes('sass') }">SASS</li>
             <li :class="{ active: highlightedSkill.includes('scss') }">SCSS</li>
             <li :class="{ active: highlightedSkill.includes('es6') }">ES6+</li>
-            <li :class="{ active: highlightedSkill.includes('es6') }">AWS CDK</li>
-            <li :class="{ active: highlightedSkill.includes('es6') }">Cypress</li>
-            <li :class="{ active: highlightedSkill.includes('es6') }">Playwright</li>
-            <li :class="{ active: highlightedSkill.includes('vue') }">Vue</li>
+            <li :class="{ active: highlightedSkill.includes('firebase') }">Firebase</li>
+            <li :class="{ active: highlightedSkill.includes('aws') }">AWS CDK</li>
+            <li :class="{ active: highlightedSkill.includes('cypress') }">Cypress</li>
+            <li :class="{ active: highlightedSkill.includes('playwright') }">Playwright</li>
             <li :class="{ active: highlightedSkill.includes('java') }">Java</li>
             <li :class="{ active: highlightedSkill.includes('php') }">PHP</li>
             <li :class="{ active: highlightedSkill.includes('mysql') }">MySQL</li>
             <li :class="{ active: highlightedSkill.includes('flow') }">Flow</li>
             <li :class="{ active: highlightedSkill.includes('hack') }">Hack</li>
             <li :class="{ active: highlightedSkill.includes('jest') }">Jest</li>
-            <li :class="{ active: highlightedSkill.includes('jest') }">Vitest</li>
+            <li :class="{ active: highlightedSkill.includes('vitest') }">Vitest</li>
           </ul>
         </div>
 
@@ -134,6 +138,7 @@
             <li :class="{ active: highlightedSkill.includes('vue-tools') }">Chrome Lighthouse</li>
             <li :class="{ active: highlightedSkill.includes('copilot') }">GitHub Copilot</li>
             <li :class="{ active: highlightedSkill.includes('metro') }">Metro</li>
+            <li :class="{ active: highlightedSkill.includes('flipper') }">Flipper</li>
             <li :class="{ active: highlightedSkill.includes('vs-code') }">VS Code</li>
           </ul>
         </div>
@@ -144,12 +149,56 @@
 
         <div
           class="section"
+          @mouseenter="() => (highlightedSkill = skillsUsed.meta_monetization)"
+          @mouseleave="() => (highlightedSkill = [])"
+        >
+          <div class="h3-row">
+            <h3>Meta: Applied Artificial Intelligence</h3>
+            <span class="title">Software Engineer / 2025.01 – Present</span>
+          </div>
+          <div class="desc">
+            Recruited into the Applied Artificial Intelligence org following a company re-org;
+            previously developed generative AI features and canvas composition editing tools within
+            the Ads Manager monetization space.
+          </div>
+          <ul class="job-desc-list">
+            <li>
+              <strong>Accelerate AI-driven development</strong>: Leveraged AI tools to achieve the
+              highest Source Lines of Code (SLOC) changes within a skip-level org of ~100
+              developers, generating ~100 "Engineering Times Saved (ETS)" (one of the highest in the
+              group).
+            </li>
+            <li>
+              <strong>Lead AI adoption</strong>: Spearheaded organization-wide Lunch & Learn
+              initiatives focused on advanced AI tool usage and best practices to drive developer
+              velocity.
+            </li>
+            <li>
+              <strong>Create canvas editor</strong>: Architected Wizzy Editor canvas components from
+              scratch, implementing custom drag-and-resize hooks and Playwright E2E tests for
+              monetization products.
+            </li>
+            <li>
+              <strong>Build core features</strong>: Implemented BrandKit custom font uploads and
+              designed the Shopping Cart experience in Media Wizard popovers to manage
+              generated/uploaded image and video creatives.
+            </li>
+            <li>
+              <strong>Optimize frontend &amp; operations</strong>: Restructured codebase into
+              module-centric folders, optimized grid rendering, and resolved critical production
+              memory/CPU SEVs as part of oncall duties.
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="section"
           @mouseenter="() => (highlightedSkill = skillsUsed.amazon2)"
           @mouseleave="() => (highlightedSkill = [])"
         >
           <div class="h3-row">
             <h3>Amazon: Corporate Projects Team</h3>
-            <span class="title">Software Engineer / 2024.02 – Present </span>
+            <span class="title">Software Engineer / 2024.02 – 2024.12 </span>
           </div>
           <div class="desc">
             Maintain and enhance the order intake app for an internal division; collaborate with
@@ -193,32 +242,92 @@
             <span class="title">Senior Software Engineer / 2022.10 - 2023.04</span>
           </div>
           <div class="desc">
-            Implement features and fix bugs on web and mobile using React and React Native
+            Develop cross-platform modules and coordinate engineering alignment between web and
+            mobile (React / React Native)
           </div>
           <ul class="job-desc-list">
             <li>
-              <strong>Rearchitect</strong> Refactored the common logic from web and mobile into
-              React hooks that can be used across both platforms, and improved TypeScript
-              definitions
+              <strong>Build OCR expense submission</strong> by designing the photo capture receipt
+              OCR prefill flow using React Native and Expo, and integrating backend APIs to
+              streamline expense creation.
             </li>
             <li>
-              <strong>Improve testability</strong> Rewrote critical functions to be testable and
-              more readable
+              <strong>Optimize mobile performance</strong> by refactoring application rendering
+              behavior to eliminate redundant React Native useEffect loops, resulting in a cleaner,
+              event-driven reactive state.
             </li>
             <li>
-              <strong>Train others</strong> Launched a campaign on correctly implementing i18n and
-              taught others TypeScript and its importance
-            </li>
-            <!-- <li>
-              <strong>Improve code quality</strong> Rewrote critical functions to be testable and
-              more readable; Used Flipper and other internal tools to debug and fix bugs
+              <strong>Unify shared type system</strong> by consolidating bifurcated TypeScript type
+              definition files for web and mobile, eradicating any/unknown typings, and enforcing
+              design-system parity.
             </li>
             <li>
-              <strong>Build UI/UX</strong> Implemented i18n; used internal UI library to build and
-              improve features
-            </li> -->
+              <strong>Rearchitect shared hooks</strong> by extracting shared web and mobile
+              controller logic into testable React hooks, utilizing Redux for centralized global
+              state management.
+            </li>
           </ul>
         </div>
+
+        <div
+          class="section hidden"
+          @mouseenter="() => (highlightedSkill = skillsUsed.pilot)"
+          @mouseleave="() => (highlightedSkill = [])"
+        >
+          <div class="h3-row">
+            <h3>Pilot.com</h3>
+            <span class="title">Software Engineer / 2019.03 – 2020.01</span>
+          </div>
+          <div class="desc">Develop an app for the internal bookkeepers</div>
+          <ul class="job-desc-list">
+            <li>
+              <strong>Redo customer dashboard</strong> Revamped the page that displays all customer
+              statuses with details about their work completion, assignee, etc.
+            </li>
+            <li>
+              <strong>Build global component</strong> Built a component that can be used across the
+              app to toggle the status of a customer
+            </li>
+            <li>
+              <strong>Communicate for quick result</strong> Owing to startup nature of the company,
+              talked directly with designers, PMs, devs, and other employees to quickly implement
+              ideas, fix bugs, etc.
+            </li>
+            <li>
+              <strong>Optimize/modernize codebase</strong> Implemented newest standard of
+              HTML/JavaScript/CSS and improved test coverage
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      @mouseover="() => setPaperHovering(true)"
+      @mouseleave="() => setPaperHovering(false)"
+      :class="['paper', { hover: isHoveringOverPaper }]"
+    >
+      <div class="col-1">
+        <div class="section">
+          <h2>Miscellaneous</h2>
+          <ul class="job-desc-list">
+            <li>
+              Places in the top percentiles in various JavaScript assessments, such as LinkedIn,
+              TopTal, TripleByte, etc.
+            </li>
+            <li>
+              I write self-documenting code. Generally speaking, if I have to write comments, then
+              there's probably a better way to write the code.
+            </li>
+            <li>
+              Having been a private tutor for 9 years, I care deeply about how and why people
+              encounter hindrance in accessing information. This care has been translated into my
+              passion for creating intuitive UI/UX.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-2">
+        <h2>Experience (continued)</h2>
 
         <div
           class="section"
@@ -296,64 +405,6 @@
           </ul>
         </div>
 
-        <div
-          class="section hidden"
-          @mouseenter="() => (highlightedSkill = skillsUsed.pilot)"
-          @mouseleave="() => (highlightedSkill = [])"
-        >
-          <div class="h3-row">
-            <h3>Pilot.com</h3>
-            <span class="title">Software Engineer / 2019.03 – 2020.01</span>
-          </div>
-          <div class="desc">Develop an app for the internal bookkeepers</div>
-          <ul class="job-desc-list">
-            <li>
-              <strong>Redo customer dashboard</strong> Revamped the page that displays all customer
-              statuses with details about their work completion, assignee, etc.
-            </li>
-            <li>
-              <strong>Build global component</strong> Built a component that can be used across the
-              app to toggle the status of a customer
-            </li>
-            <li>
-              <strong>Communicate for quick result</strong> Owing to startup nature of the company,
-              talked directly with designers, PMs, devs, and other employees to quickly implement
-              ideas, fix bugs, etc.
-            </li>
-            <li>
-              <strong>Optimize/modernize codebase</strong> Implemented newest standard of
-              HTML/JavaScript/CSS and improved test coverage
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div
-      @mouseover="() => setPaperHovering(true)"
-      @mouseleave="() => setPaperHovering(false)"
-      :class="['paper', { hover: isHoveringOverPaper }]"
-    >
-      <div class="col-1">
-        <div class="section">
-          <h2>Miscellaneous</h2>
-          <ul class="job-desc-list">
-            <li>
-              Places in the top percentiles in various JavaScript assessments, such as LinkedIn,
-              TopTal, TripleByte, etc.
-            </li>
-            <li>
-              I write self-documenting code. Generally speaking, if I have to write comments, then
-              there's probably a better way to write the code.
-            </li>
-            <li>
-              Having been a private tutor for 9 years, I care deeply about how and why people
-              encounter hindrance in accessing information. This care has been translated into my
-              passion for creating intuitive UI/UX.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-2">
         <h2 class="margin-top">Projects</h2>
 
         <div
@@ -366,63 +417,58 @@
             <span class="title">Full Stack Developer / 2023.06 – 2024.02 </span>
           </div>
           <div class="desc">
-            It lets users practice infinite number of math problems for standardized math tests.
+            An app designed to help students practice basic arithmetic by tying math performance to
+            rewards (such as screen time).
           </div>
           <ul class="job-desc-list">
             <li>
-              <strong>Build from scratch</strong> Planned, designed, and coded it based on 9 years
-              of teaching experience
+              <strong>AI-assisted orchestration</strong>: Developed a system of collaborative AI
+              agents to automatically generate components, routing, and domain model updates.
             </li>
             <li>
-              <strong> Infrastructure</strong> Built with Firebase for authentication, database, and
-              hosting
+              <strong>Full stack infrastructure</strong>: Built student reward portals integrating
+              Firebase (Auth/Firestore), Stripe subscription processing, and Google Cloud Functions.
             </li>
             <li>
-              <strong>Build mailing list</strong> Built pipeline with Google Cloud Functions and
-              Mailchimp
-            </li>
-            <li>
-              <strong>Process payments</strong>
-              Integrate Stripe for subscription payment processing.
+              <strong>Product Design</strong>: Planned, designed, and coded the entire application
+              based on 9 years of teaching experience.
             </li>
           </ul>
         </div>
         <div class="section">
           <h3>Arraze</h3>
-          <div class="desc">A JavaScript utility library for array manipulation.</div>
+          <div class="desc">Lightweight utility library for intuitive array manipulation.</div>
           <ul class="job-desc-list">
-            <li>Designed to be intuitive, light, tested, and well documented.</li>
             <li>
-              Provides functionalities such as sort(), filter(), shuffle(), and createNumbered()
-              that are often used by developers, but implemented each time they're used.
+              Implements core utilities (`sort()`, `filter()`, `shuffle()`, `createNumbered()`) with
+              100% test coverage.
             </li>
-            <li>Written in TypeScript for optimal IDE integration and type safety</li>
+            <li>Fully written in TypeScript for optimal IDE integration and type safety.</li>
           </ul>
         </div>
 
         <div class="section">
           <h3>DirTree</h3>
-          <div class="desc">An app that prints folder structures to be used in dev doc.</div>
+          <div class="desc">
+            An application generating visual directory structures for developer documentation.
+          </div>
           <ul class="job-desc-list">
-            <li>Develop custom algorithm to display directory structure</li>
-            <li>Develop intuitive UI/UX to be used with keyboard</li>
-            <li>Collect user feedback and metrics with Firestore</li>
+            <li>Developed a custom display algorithm and keyboard-accessible UI/UX.</li>
+            <li>Utilizes Firestore to collect user feedback and usage metrics.</li>
           </ul>
         </div>
 
         <div class="section">
           <h3>PrecisionJS</h3>
           <div class="desc">
-            A JavaScript math library that allows high level math with infinite precision.
+            JavaScript math library for arbitrarily large numbers with infinite precision.
           </div>
           <ul class="job-desc-list">
-            <li>Uses array or BigInt calculate arbitrarily large numbers with precision</li>
-            <li>Parses and calculates repeating decimals and fractions</li>
             <li>
-              Uses series, implemented in recursion or while loop, to run trigonometric functions
-              and higher-level functions with practically infinite precision
+              Parses repeating decimals/fractions and calculates trigonometric series via recursion
+              and BigInt.
             </li>
-            <li>Being re-written in TypeScript</li>
+            <li>Written in TypeScript for type safety and clean IDE integration.</li>
           </ul>
         </div>
       </div>
@@ -430,7 +476,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 
 const isInteractive = ref(false)
 const isHoveringOverPaper = ref(false)
@@ -444,19 +490,34 @@ const setInteractive = (val: boolean) => (isInteractive.value = val)
 const setPaperHovering = (val: boolean) => (isHoveringOverPaper.value = val)
 
 const skillsUsed = {
+  meta_monetization: [
+    'react',
+    'flow',
+    'gql',
+    'relay',
+    'hooks',
+    'ui',
+    'ux',
+    'e2e',
+    'unit',
+    'playwright'
+  ],
   rippling: [
     'ts',
     'react',
+    'react_native',
+    'expo',
     'jest',
     'hooks',
-    'flux',
+    'redux',
     'ui',
     'ux',
     'e2e',
     'unit',
     'rest',
     'i18n',
-    'mobile'
+    'mobile',
+    'flipper'
   ],
   meta: ['flow', 'react', 'gql', 'ui', 'ux', 'hooks', 'e2e', 'unit', 'hack', 'php'],
   amazon: [
@@ -475,7 +536,7 @@ const skillsUsed = {
     'gwt'
   ],
   pilot: ['vue', 'scss', 'sass', 'html', 'spa', 'vue-tools', 'e2e', 'jest', 'unit', 'resp'],
-  mtn: ['vue', 'vue-tools', 'ui', 'ux', 'spa', 'scss', 'tail'],
+  mtn: ['vue', 'vue-tools', 'ui', 'ux', 'spa', 'scss', 'tail', 'firebase'],
   amazon2: [
     'ts',
     'react',
@@ -489,7 +550,8 @@ const skillsUsed = {
     'unit',
     'rest',
     'i18n',
-    'eda'
+    'eda',
+    'aws'
   ]
 }
 </script>
