@@ -19,37 +19,12 @@
     >
       <div class="col-1">
         <div class="section main">
-          <h1 class="name">J Ko</h1>
-          <h2>Software Developer</h2>
+          <h1 class="name">{{ resumeData.name }}</h1>
+          <h2>{{ resumeData.role }}</h2>
           <ul class="contact-list">
-            <li>
-              <a target="_blank" href="https://j-ko.dev">
-                <!-- <img src="" alt="" class="contact-ion" /> -->
-                J-Ko.dev
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="mailto:206jko@gmail.com">
-                <!-- <img src="" alt="" class="contact-ion" /> -->
-                206jko@gmail.com
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="tel:+14252205899">
-                <!-- <img src="" alt="" class="contact-ion" /> -->
-                +1.425.220.5899
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="https://Github.com/jko206">
-                <!-- <img src="" alt="" class="contact-ion" /> -->
-                Github.com/jko206
-              </a>
-            </li>
-            <li>
-              <a target="_blank" href="https://LinkedIn.com/in/206jko">
-                <!-- <img src="" alt="" class="contact-ion" /> -->
-                LinkedIn.com/in/206jko
+            <li v-for="item in resumeData.contact" :key="item.text">
+              <a target="_blank" :href="item.href">
+                {{ item.text }}
               </a>
             </li>
           </ul>
@@ -57,248 +32,53 @@
 
         <div class="section">
           <h2>Introduction</h2>
-          <div>Connecting humans and computers</div>
+          <div>{{ resumeData.introduction }}</div>
         </div>
 
         <div class="section">
           <h2>Education</h2>
-          <h3>U of Washington, Seattle</h3>
+          <h3>{{ resumeData.education.school }}</h3>
           <ul class="plain-list">
             <li class="flex justify-between">
-              <span>Mathematics B.S.</span>
-              <span class="small-text">(discontinued)</span>
+              <span>{{ resumeData.education.degree }}</span>
+              <span class="small-text">{{ resumeData.education.notes }}</span>
             </li>
-            <li>Computer science focused</li>
+            <li>{{ resumeData.education.detail }}</li>
           </ul>
         </div>
 
+        <SkillsList
+          :title="resumeData.skills.languages.title"
+          :items="resumeData.skills.languages.items"
+          :highlighted-skill="highlightedSkill"
+        />
+
         <div class="section">
-          <h2>Language / Frameworks</h2>
+          <h2>{{ resumeData.skills.paradigms.title }}</h2>
           <ul class="slash-list">
-            <li :class="{ active: highlightedSkill.includes('js') }">JavaScript</li>
-            <li :class="{ active: highlightedSkill.includes('ts') }">TypeScript</li>
-            <li :class="{ active: highlightedSkill.includes('react') }">React</li>
-            <li :class="{ active: highlightedSkill.includes('react_native') }">React Native</li>
-            <li :class="{ active: highlightedSkill.includes('expo') }">Expo</li>
-            <li :class="{ active: highlightedSkill.includes('vue') }">Vue</li>
-            <li :class="{ active: highlightedSkill.includes('node') }">NodeJS</li>
-            <li :class="{ active: highlightedSkill.includes('css') }">CSS</li>
-            <li :class="{ active: highlightedSkill.includes('html') }">HTML</li>
-            <li :class="{ active: highlightedSkill.includes('gql') }">GraphQL</li>
-            <li :class="{ active: highlightedSkill.includes('relay') }">Relay</li>
-            <li :class="{ active: highlightedSkill.includes('redux') }">Redux</li>
-            <li :class="{ active: highlightedSkill.includes('tail') }">Tailwind CSS</li>
-            <li :class="{ active: highlightedSkill.includes('sass') }">SASS</li>
-            <li :class="{ active: highlightedSkill.includes('scss') }">SCSS</li>
-            <li :class="{ active: highlightedSkill.includes('es6') }">ES6+</li>
-            <li :class="{ active: highlightedSkill.includes('firebase') }">Firebase</li>
-            <li :class="{ active: highlightedSkill.includes('aws') }">AWS CDK</li>
-            <li :class="{ active: highlightedSkill.includes('cypress') }">Cypress</li>
-            <li :class="{ active: highlightedSkill.includes('playwright') }">Playwright</li>
-            <li :class="{ active: highlightedSkill.includes('java') }">Java</li>
-            <li :class="{ active: highlightedSkill.includes('php') }">PHP</li>
-            <li :class="{ active: highlightedSkill.includes('mysql') }">MySQL</li>
-            <li :class="{ active: highlightedSkill.includes('flow') }">Flow</li>
-            <li :class="{ active: highlightedSkill.includes('hack') }">Hack</li>
-            <li :class="{ active: highlightedSkill.includes('jest') }">Jest</li>
-            <li :class="{ active: highlightedSkill.includes('vitest') }">Vitest</li>
+            <li v-for="item in resumeData.skills.paradigms.items" :key="item">
+              {{ item }}
+            </li>
           </ul>
         </div>
 
-        <div class="section">
-          <h2>Concepts / Paradigms</h2>
-          <ul class="slash-list">
-            <li>Functional programming</li>
-            <li>Event-driven architecture</li>
-            <li>Cloud computing</li>
-            <li>Single/Multi Page Application</li>
-            <li>Object oriented programming (OOP)</li>
-            <li>Responsive design</li>
-            <li>Test-driven development</li>
-            <li>React hooks</li>
-            <li>Vue composition</li>
-            <li>Algorithms</li>
-            <li>Data structures</li>
-            <li>User interface (UI)</li>
-            <li>User experience (UX)</li>
-            <li>Internationalization (i18n)</li>
-            <li>Testing (unit / integration / E2E)</li>
-            <li>Continuous integration / continuous deployment (CI/CD)</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h2>Tools</h2>
-          <ul class="slash-list">
-            <li :class="{ active: highlightedSkill.includes('npm') }">npm</li>
-            <li :class="{ active: highlightedSkill.includes('webpack') }">vite</li>
-            <li :class="{ active: highlightedSkill.includes('git') }">git</li>
-            <li :class="{ active: highlightedSkill.includes('vue-tools') }">Vue dev tools</li>
-            <li :class="{ active: highlightedSkill.includes('vue-tools') }">React dev tools</li>
-            <li :class="{ active: highlightedSkill.includes('vue-tools') }">Chrome Lighthouse</li>
-            <li :class="{ active: highlightedSkill.includes('copilot') }">GitHub Copilot</li>
-            <li :class="{ active: highlightedSkill.includes('metro') }">Metro</li>
-            <li :class="{ active: highlightedSkill.includes('flipper') }">Flipper</li>
-            <li :class="{ active: highlightedSkill.includes('vs-code') }">VS Code</li>
-          </ul>
-        </div>
+        <SkillsList
+          :title="resumeData.skills.tools.title"
+          :items="resumeData.skills.tools.items"
+          :highlighted-skill="highlightedSkill"
+        />
       </div>
 
       <div class="col-2">
         <h2>Experience</h2>
 
-        <div
-          class="section"
-          @mouseenter="() => (highlightedSkill = skillsUsed.meta_monetization)"
-          @mouseleave="() => (highlightedSkill = [])"
-        >
-          <div class="h3-row">
-            <h3>Meta: Applied Artificial Intelligence</h3>
-            <span class="title">Software Engineer / 2025.01 – Present</span>
-          </div>
-          <div class="desc">
-            Recruited into the Applied Artificial Intelligence org following a company re-org;
-            previously developed generative AI features and canvas composition editing tools within
-            the Ads Manager monetization space.
-          </div>
-          <ul class="job-desc-list">
-            <li>
-              <strong>Accelerate AI-driven development</strong>: Leveraged AI tools to achieve the
-              highest Source Lines of Code (SLOC) changes within a skip-level org of ~100
-              developers, generating ~100 "Engineering Times Saved (ETS)" (one of the highest in the
-              group).
-            </li>
-            <li>
-              <strong>Lead AI adoption</strong>: Spearheaded organization-wide Lunch & Learn
-              initiatives focused on advanced AI tool usage and best practices to drive developer
-              velocity.
-            </li>
-            <li>
-              <strong>Create canvas editor</strong>: Architected Wizzy Editor canvas components from
-              scratch, implementing custom drag-and-resize hooks and Playwright E2E tests for
-              monetization products.
-            </li>
-            <li>
-              <strong>Build core features</strong>: Implemented BrandKit custom font uploads and
-              designed the Shopping Cart experience in Media Wizard popovers to manage
-              generated/uploaded image and video creatives.
-            </li>
-            <li>
-              <strong>Optimize frontend &amp; operations</strong>: Restructured codebase into
-              module-centric folders, optimized grid rendering, and resolved critical production
-              memory/CPU SEVs as part of oncall duties.
-            </li>
-          </ul>
-        </div>
-
-        <div
-          class="section"
-          @mouseenter="() => (highlightedSkill = skillsUsed.amazon2)"
-          @mouseleave="() => (highlightedSkill = [])"
-        >
-          <div class="h3-row">
-            <h3>Amazon: Corporate Projects Team</h3>
-            <span class="title">Software Engineer / 2024.02 – 2024.12 </span>
-          </div>
-          <div class="desc">
-            Maintain and enhance the order intake app for an internal division; collaborate with
-            stakeholders to deliver tailored solutions that improve operational efficiency and user
-            experience.
-          </div>
-          <ul class="job-desc-list">
-            <li>
-              <strong>Develop and optimize file upload</strong> by enabling users to validate and
-              assess 3D files while managing parallel async operations, resolving performance issues
-              through optimized library usage, reducing load times, and enhancing user experience
-              during complex file uploads.
-            </li>
-            <li>
-              <strong>Refactor frontend components</strong> by implementing the reducer pattern,
-              improving code readability, maintainability, and increasing test coverage from 80% to
-              over 95%.
-            </li>
-            <li>
-              <strong>Manage timelines and collaborate</strong> in a dynamic environment by
-              initiating early design planning, navigating ambiguous project requirements,
-              coordinating with cross-functional teams, and documenting decisions to ensure smooth
-              and successful project execution.
-            </li>
-            <li>
-              <strong>Leverage a robust tech stack</strong> including React, TypeScript, AWS CDK,
-              AppSync, and Cognito to build and maintain a scalable, secure, and high-performance
-              order intake application, seamlessly integrating with event-driven microservices
-              architecture.
-            </li>
-          </ul>
-        </div>
-
-        <div
-          class="section"
-          @mouseenter="() => (highlightedSkill = skillsUsed.rippling)"
-          @mouseleave="() => (highlightedSkill = [])"
-        >
-          <div class="h3-row">
-            <h3>Rippling</h3>
-            <span class="title">Senior Software Engineer / 2022.10 - 2023.04</span>
-          </div>
-          <div class="desc">
-            Develop cross-platform modules and coordinate engineering alignment between web and
-            mobile (React / React Native)
-          </div>
-          <ul class="job-desc-list">
-            <li>
-              <strong>Build OCR expense submission</strong> by designing the photo capture receipt
-              OCR prefill flow using React Native and Expo, and integrating backend APIs to
-              streamline expense creation.
-            </li>
-            <li>
-              <strong>Optimize mobile performance</strong> by refactoring application rendering
-              behavior to eliminate redundant React Native useEffect loops, resulting in a cleaner,
-              event-driven reactive state.
-            </li>
-            <li>
-              <strong>Unify shared type system</strong> by consolidating bifurcated TypeScript type
-              definition files for web and mobile, eradicating any/unknown typings, and enforcing
-              design-system parity.
-            </li>
-            <li>
-              <strong>Rearchitect shared hooks</strong> by extracting shared web and mobile
-              controller logic into testable React hooks, utilizing Redux for centralized global
-              state management.
-            </li>
-          </ul>
-        </div>
-
-        <div
-          class="section hidden"
-          @mouseenter="() => (highlightedSkill = skillsUsed.pilot)"
-          @mouseleave="() => (highlightedSkill = [])"
-        >
-          <div class="h3-row">
-            <h3>Pilot.com</h3>
-            <span class="title">Software Engineer / 2019.03 – 2020.01</span>
-          </div>
-          <div class="desc">Develop an app for the internal bookkeepers</div>
-          <ul class="job-desc-list">
-            <li>
-              <strong>Redo customer dashboard</strong> Revamped the page that displays all customer
-              statuses with details about their work completion, assignee, etc.
-            </li>
-            <li>
-              <strong>Build global component</strong> Built a component that can be used across the
-              app to toggle the status of a customer
-            </li>
-            <li>
-              <strong>Communicate for quick result</strong> Owing to startup nature of the company,
-              talked directly with designers, PMs, devs, and other employees to quickly implement
-              ideas, fix bugs, etc.
-            </li>
-            <li>
-              <strong>Optimize/modernize codebase</strong> Implemented newest standard of
-              HTML/JavaScript/CSS and improved test coverage
-            </li>
-          </ul>
-        </div>
+        <ResumeItem
+          v-for="item in resumeData.experiencePage1"
+          :key="item.id || item.title"
+          :item="item"
+          @highlight-skills="onHighlightSkills"
+          @clear-highlight="onClearHighlight"
+        />
       </div>
     </div>
     <div
@@ -310,18 +90,8 @@
         <div class="section">
           <h2>Miscellaneous</h2>
           <ul class="job-desc-list">
-            <li>
-              Places in the top percentiles in various JavaScript assessments, such as LinkedIn,
-              TopTal, TripleByte, etc.
-            </li>
-            <li>
-              I write self-documenting code. Generally speaking, if I have to write comments, then
-              there's probably a better way to write the code.
-            </li>
-            <li>
-              Having been a private tutor for 9 years, I care deeply about how and why people
-              encounter hindrance in accessing information. This care has been translated into my
-              passion for creating intuitive UI/UX.
+            <li v-for="(item, index) in resumeData.miscellaneous" :key="index">
+              {{ item }}
             </li>
           </ul>
         </div>
@@ -329,154 +99,33 @@
       <div class="col-2">
         <h2>Experience (continued)</h2>
 
-        <div
-          class="section"
-          @mouseenter="() => (highlightedSkill = skillsUsed.meta)"
-          @mouseleave="() => (highlightedSkill = [])"
-        >
-          <div class="h3-row">
-            <h3>Meta: Web3 Services</h3>
-            <span class="title">Software Engineer / 2021.10 – 2022.10</span>
-          </div>
-          <div class="desc">
-            Build the internal platform as the company transitions from Web 2 to Web 3 using React,
-            Flow, GraphQL and HackLang.
-          </div>
-          <ul class="job-desc-list">
-            <li>
-              <strong>Engage and plan</strong> Actively engaged other teams to scope out needs and
-              prioritize features with largest business impact
-            </li>
-            <li>
-              <strong>Build platform</strong> Built an internal tool for querying and displaying
-              NFTs
-            </li>
-            <li>
-              <strong>Rearchitect</strong> Transformed a basic querying tool into a platform upon
-              which others can build their own tools
-            </li>
-            <li>
-              <strong>Mentor interns</strong> Taught interns technical skills, as well as career
-              planning and growth
-            </li>
-          </ul>
-        </div>
-
-        <div
-          class="section"
-          @mouseenter="() => (highlightedSkill = skillsUsed.amazon)"
-          @mouseleave="() => (highlightedSkill = [])"
-        >
-          <div class="h3-row">
-            <h3>Amazon Web Services: EC2 Networking</h3>
-            <span class="title">Software Engineer / 2020.03 – 2021.10</span>
-          </div>
-          <div class="desc">
-            Develop the
-            <a
-              href="https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#LoadBalancers:"
-              target="_blank"
-              class="underline text-blue-500"
-              >console</a
-            >
-            and the infrastructure behind it for the Elastic Load Balancing org
-          </div>
-          <ul class="job-desc-list">
-            <li>
-              <strong>Rebuild console</strong> Rewrote console previously written in GWT and Angular
-              with internal React library, RxJS, Redux, and TypeScript.
-            </li>
-            <li>
-              <strong>Improve testing</strong> Wrote unit, integration, and E2E to tests to maintain
-              bug-free service
-            </li>
-            <li>
-              <strong>Listen and engage</strong> Read internal and external customers' feedback to
-              plan and prioritize features, and catch UI/UX issues not caught by tests
-            </li>
-            <li>
-              <strong>Manage deployment</strong> Monitored and maintained CI/CD pipeline for smooth
-              worldwide deployment
-            </li>
-            <li>
-              <strong>Improve onboarding</strong> Reduced onboarding time from 6 weeks to 1 week at
-              the beginning of the pandemic
-            </li>
-          </ul>
-        </div>
+        <ResumeItem
+          v-for="item in resumeData.experiencePage2"
+          :key="item.id || item.title"
+          :item="item"
+          @highlight-skills="onHighlightSkills"
+          @clear-highlight="onClearHighlight"
+        />
 
         <h2 class="margin-top">Projects</h2>
 
-        <div
-          class="section"
-          @mouseenter="() => (highlightedSkill = skillsUsed.mtn)"
-          @mouseleave="() => (highlightedSkill = [])"
-        >
-          <div class="h3-row">
-            <h3>MathTestNinja</h3>
-            <span class="title">Full Stack Developer / 2023.06 – 2024.02 </span>
-          </div>
-          <div class="desc">
-            An app designed to help students practice basic arithmetic by tying math performance to
-            rewards (such as screen time).
-          </div>
-          <ul class="job-desc-list">
-            <li>
-              <strong>AI-assisted orchestration</strong>: Developed a system of collaborative AI
-              agents to automatically generate components, routing, and domain model updates.
-            </li>
-            <li>
-              <strong>Full stack infrastructure</strong>: Built student reward portals integrating
-              Firebase (Auth/Firestore), Stripe subscription processing, and Google Cloud Functions.
-            </li>
-            <li>
-              <strong>Product Design</strong>: Planned, designed, and coded the entire application
-              based on 9 years of teaching experience.
-            </li>
-          </ul>
-        </div>
-        <div class="section">
-          <h3>Arraze</h3>
-          <div class="desc">Lightweight utility library for intuitive array manipulation.</div>
-          <ul class="job-desc-list">
-            <li>
-              Implements core utilities (`sort()`, `filter()`, `shuffle()`, `createNumbered()`) with
-              100% test coverage.
-            </li>
-            <li>Fully written in TypeScript for optimal IDE integration and type safety.</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h3>DirTree</h3>
-          <div class="desc">
-            An application generating visual directory structures for developer documentation.
-          </div>
-          <ul class="job-desc-list">
-            <li>Developed a custom display algorithm and keyboard-accessible UI/UX.</li>
-            <li>Utilizes Firestore to collect user feedback and usage metrics.</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h3>PrecisionJS</h3>
-          <div class="desc">
-            JavaScript math library for arbitrarily large numbers with infinite precision.
-          </div>
-          <ul class="job-desc-list">
-            <li>
-              Parses repeating decimals/fractions and calculates trigonometric series via recursion
-              and BigInt.
-            </li>
-            <li>Written in TypeScript for type safety and clean IDE integration.</li>
-          </ul>
-        </div>
+        <ResumeItem
+          v-for="item in resumeData.projects"
+          :key="item.id || item.title"
+          :item="item"
+          @highlight-skills="onHighlightSkills"
+          @clear-highlight="onClearHighlight"
+        />
       </div>
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 import { ref } from 'vue'
+import { resumeData } from './data/resume'
+import SkillsList from './components/SkillsList.vue'
+import ResumeItem from './components/ResumeItem.vue'
 
 const isInteractive = ref(false)
 const isHoveringOverPaper = ref(false)
@@ -489,72 +138,15 @@ setTimeout(() => {
 const setInteractive = (val: boolean) => (isInteractive.value = val)
 const setPaperHovering = (val: boolean) => (isHoveringOverPaper.value = val)
 
-const skillsUsed = {
-  meta_monetization: [
-    'react',
-    'flow',
-    'gql',
-    'relay',
-    'hooks',
-    'ui',
-    'ux',
-    'e2e',
-    'unit',
-    'playwright'
-  ],
-  rippling: [
-    'ts',
-    'react',
-    'react_native',
-    'expo',
-    'jest',
-    'hooks',
-    'redux',
-    'ui',
-    'ux',
-    'e2e',
-    'unit',
-    'rest',
-    'i18n',
-    'mobile',
-    'flipper'
-  ],
-  meta: ['flow', 'react', 'gql', 'ui', 'ux', 'hooks', 'e2e', 'unit', 'hack', 'php'],
-  amazon: [
-    'ts',
-    'react',
-    'jest',
-    'hooks',
-    'redux',
-    'rxjs',
-    'ui',
-    'ux',
-    'e2e',
-    'unit',
-    'rest',
-    'i18n',
-    'gwt'
-  ],
-  pilot: ['vue', 'scss', 'sass', 'html', 'spa', 'vue-tools', 'e2e', 'jest', 'unit', 'resp'],
-  mtn: ['vue', 'vue-tools', 'ui', 'ux', 'spa', 'scss', 'tail', 'firebase'],
-  amazon2: [
-    'ts',
-    'react',
-    'jest',
-    'hooks',
-    'redux',
-    'rxjs',
-    'ui',
-    'ux',
-    'e2e',
-    'unit',
-    'rest',
-    'i18n',
-    'eda',
-    'aws'
-  ]
+const onHighlightSkills = (skills: string[]) => {
+  highlightedSkill.value = skills
+}
+
+const onClearHighlight = () => {
+  highlightedSkill.value = []
 }
 </script>
+
 <style lang="sass">
 body
   background-color: rgb(82, 86, 89) !important
@@ -563,6 +155,7 @@ body
   --jko-blue-muted: rgb(106 128 154)
   --jko-highlight: rgb(43 83 132)
 </style>
+
 <style scoped lang="sass">
 
 h1
