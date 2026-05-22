@@ -11,5 +11,13 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
-  }
+  },
+  overrides: [
+    {
+      files: ['*.config.js', '*.config.ts', '.eslintrc.cjs'],
+      env: {
+        node: true
+      }
+    }
+  ]
 }
