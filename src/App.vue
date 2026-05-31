@@ -25,8 +25,8 @@
     <!-- Left Column Content Divider -->
     <ContentDivider
       to-prefix="left-col"
-      width="2.25in"
-      :max-height="isPaper ? 1008 : 999999"
+      width="var(--col-1-width)"
+      :max-height="isPaper ? pageMaxContentHeight : 999999"
       @update:page-count="(val) => (leftPages = val)"
     >
       <BasicInfo :name="resumeData.name" :role="resumeData.role" :contact="resumeData.contact" />
@@ -82,8 +82,8 @@
     <!-- Right Column Content Divider -->
     <ContentDivider
       to-prefix="right-col"
-      width="5.5in"
-      :max-height="isPaper ? 1008 : 999999"
+      width="var(--col-2-width)"
+      :max-height="isPaper ? pageMaxContentHeight : 999999"
       @update:page-count="(val) => (rightPages = val)"
     >
       <ResumeItem
@@ -130,6 +130,8 @@ const totalPages = computed(() => {
   return Math.max(leftPages.value, rightPages.value)
 })
 
+const pageMaxContentHeight = computed(() => 1235)
+
 const allExperiences = computed(() => resumeData.experiences)
 
 setTimeout(() => {
@@ -165,17 +167,25 @@ h3
 .small-text
   font-size: 9px
   color: gray
+.background
+  --page-width: 1000px
+  --page-height: calc(var(--page-width) * 11 / 8.5)
+  --page-padding: calc(var(--page-width) * 0.25 / 8.5)
+  --page-gap: calc(var(--page-width) * 0.25 / 8.5)
+  --col-1-width: calc(var(--page-width) * 2.25 / 8.5)
+  --col-2-width: calc(var(--page-width) * 5.5 / 8.5)
+
 .section
   font-size: 12px
 .paper
   background: white
-  width:  8.5in
-  height: 11in
+  width:  var(--page-width)
+  height: var(--page-height)
   margin: 80px auto
-  padding: 0.25in
+  padding: var(--page-padding)
   display: grid
-  grid-template-columns: 2.25in 5.5in
-  grid-gap: .25in
+  grid-template-columns: var(--col-1-width) var(--col-2-width)
+  grid-gap: var(--page-gap)
   line-height: 1.25
   transition: margin 1s, padding 1s, width 1s, height 1s, grid-template-columns 1s, background-color 0.1s
 
@@ -185,7 +195,7 @@ h3
 .section
   position: relative
   z-index: 1
-  margin-bottom: 0.125in
+  margin-bottom: calc(var(--page-padding) / 2)
   line-height: 1.7
   transition: width 1s, all 0.1s
 
@@ -223,6 +233,7 @@ h3
   .paper
     margin: 0
   .background
+    --page-width: 8.5in
     transform: scale(1)
   .main:after
     background-color: var(--jko-blue)
@@ -234,8 +245,6 @@ h3
   .paper
     margin: 40px auto
     height: auto
-    width: 1000px
-    grid-template-columns: 1fr 2fr
 
 .interactive
   .paper

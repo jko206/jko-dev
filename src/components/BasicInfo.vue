@@ -104,18 +104,18 @@ h2
   display: flex
   flex-direction: column
   justify-content: space-between
-  margin-top: 0.125in
+  margin-top: calc(var(--page-padding) / 2)
   aspect-ratio: 1 / 1
-  top: -0.125in
+  top: calc(var(--page-padding) / -2)
   transition: all 0.1s
   &:after
     content: ''
     display: block
     position: absolute
-    width: calc(100% + 0.25in)
-    height: calc(100% + 0.25in)
-    left: -0.125in
-    top: -0.125in
+    width: calc(100% + var(--page-padding))
+    height: calc(100% + var(--page-padding))
+    left: calc(var(--page-padding) / -2)
+    top: calc(var(--page-padding) / -2)
     background-color: var(--jko-blue)
     transition: background-color 0.1s
     z-index: -1
