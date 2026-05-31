@@ -90,8 +90,6 @@ h2
   font-size: 18px
   display: flex
   align-items: center
-  font-weight: 800
-  color: #0f172a
   margin: 0
 
 h3
