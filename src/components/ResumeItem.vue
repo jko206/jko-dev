@@ -5,7 +5,14 @@
     @mouseleave="onMouseLeave"
   >
     <div class="h3-row">
-      <h3>{{ item.title }}</h3>
+      <h2 v-if="isExperience">
+        <svg viewBox="0 0 24 24" class="section-icon">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <span>{{ item.title }}</span>
+      </h2>
+      <h3 v-else>{{ item.title }}</h3>
       <span v-if="item.subtitle || item.period" class="title">
         {{ formatTitleRow(item.subtitle, item.period) }}
       </span>
@@ -28,9 +35,15 @@
 <script setup lang="ts">
 import type { ExperienceItem, ProjectItem } from '../data/resume'
 
-const props = defineProps<{
-  item: ExperienceItem | ProjectItem
-}>()
+const props = withDefaults(
+  defineProps<{
+    item: ExperienceItem | ProjectItem
+    isExperience?: boolean
+  }>(),
+  {
+    isExperience: false
+  }
+)
 
 const emit = defineEmits<{
   (e: 'highlight-skills', skills: string[]): void
@@ -68,8 +81,33 @@ const onMouseLeave = () => {
 </script>
 
 <style lang="sass" scoped>
+.h3-row
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+h2
+  font-size: 18px
+  display: flex
+  align-items: center
+  font-weight: 800
+  color: #0f172a
+  margin: 0
+
 h3
   font-size: 16px
   font-weight: 800
   color: #0f172a
+  margin: 0
+
+.section-icon
+  width: 18px
+  height: 18px
+  stroke: currentColor
+  fill: none
+  stroke-width: 2
+  stroke-linecap: round
+  stroke-linejoin: round
+  margin-right: 8px
+  flex-shrink: 0
 </style>
