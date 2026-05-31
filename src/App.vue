@@ -1,6 +1,6 @@
 <template>
-  <div :class="['background', { interactive: isInteractive }]">
-    <ResumeControls v-model:is-interactive="isInteractive" />
+  <div :class="['background', { interactive: isInteractive, fluid: !isPaper }]">
+    <ResumeControls v-model:is-interactive="isInteractive" v-model:is-paper="isPaper" />
     <!-- 
     https://chatgpt.com/c/4c764e13-76c7-4042-a049-8a5bbf5aa01a
     has a lot of the writings for what went into this version of the resume.
@@ -28,7 +28,7 @@
     <ContentDivider
       to-prefix="left-col"
       width="2.25in"
-      :max-height="1008"
+      :max-height="isPaper ? 1008 : 999999"
       @update:page-count="(val) => (leftPages = val)"
     >
       <BasicInfo :name="resumeData.name" :role="resumeData.role" :contact="resumeData.contact" />
@@ -82,7 +82,7 @@
     <ContentDivider
       to-prefix="right-col"
       width="5.5in"
-      :max-height="1008"
+      :max-height="isPaper ? 1008 : 999999"
       @update:page-count="(val) => (rightPages = val)"
     >
       <h2>Experience</h2>
@@ -116,12 +116,16 @@ import ResumeControls from './components/ResumeControls.vue'
 import BasicInfo from './components/BasicInfo.vue'
 
 const isInteractive = ref(false)
+const isPaper = ref(true)
 const isHoveringOverPaper = ref(false)
 const highlightedSkill = ref<string[]>([])
 
 const leftPages = ref(1)
 const rightPages = ref(1)
-const totalPages = computed(() => Math.max(leftPages.value, rightPages.value))
+const totalPages = computed(() => {
+  if (!isPaper.value) return 1
+  return Math.max(leftPages.value, rightPages.value)
+})
 
 const allExperiences = computed(() => [
   ...resumeData.experiencePage1,
@@ -223,33 +227,18 @@ h3
   .main:after
     background-color: var(--jko-blue)
     print-color-adjust: exact
-  .controls
+  .controls-fab
     display: none
 
-.controls
-  transition: max-height 1s
-  position: absolute
-  top: 0
-  height: 50px
-  background: darkgray
-  width: 100%
-
-  .control
-    @apply py-1 px-3 rounded-md bg-white
-    &.active
-      @apply bg-blue-500 text-white
-
-.interactive
-  .paper:nth-child(2)
-    margin: 50px auto 0
-    padding-bottom: 0
-    padding-top: 0.25in
+.fluid
   .paper
-    margin: 0 auto
+    margin: 40px auto
     height: auto
-    padding-top: 0
     width: 1000px
     grid-template-columns: 1fr 2fr
+
+.interactive
+  .paper
     &.hover
       background: gray
       :deep(.main:after)
@@ -261,9 +250,15 @@ h3
         &:before
           color: black
 
-  .paper:nth-child(3) .col-1
-    top: -88px
-    position: relative
+  &:not(.fluid)
+    .paper:nth-child(2)
+      margin: 50px auto 0
+      padding-bottom: 0
+      padding-top: 0.25in
+    .paper:nth-child(3) .col-1
+      top: -88px
+      position: relative
+
   .col-2
     .section:hover
       @apply p-3 rounded-lg

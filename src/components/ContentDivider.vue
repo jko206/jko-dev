@@ -135,7 +135,7 @@ const recalculatePages = async () => {
 
 // Watch for children additions, removals, or updates to trigger reflow
 watch(
-  flattenedChildren,
+  [flattenedChildren, () => props.maxHeight],
   () => {
     recalculatePages()
   },
