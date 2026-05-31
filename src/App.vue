@@ -154,8 +154,6 @@ body
 
 <style scoped lang="sass">
 
-h1
-  font-size: 40px
 h2
   font-size: 18px
 h3
@@ -186,30 +184,7 @@ h3
   margin-bottom: 0.125in
   line-height: 1.7
   transition: width 1s, all 0.1s
-.main
-  margin-top: 0.125in
-  height: 2.25in
-  top: -0.125in
-  transition: all 0.1s
-  &:after
-    content: ''
-    display: block
-    position: absolute
-    width: calc(100% + 0.25in)
-    height: calc(100% + 0.25in)
-    left: -0.125in
-    top: -0.125in
-    background-color: var(--jko-blue)
-    transition: background-color 0.1s
-    z-index: -1
-.contact-list
-  margin-top: 13px
-  a
-    color: var(--jko-highlight)
-    display: inline-block
-    border-bottom: 1px solid rgb(141 173 212)
-    &:hover
-      border-bottom: 1px solid var(--jko-highlight)
+
 
 :deep(.slash-list li)
   display: inline
@@ -277,9 +252,9 @@ h3
     grid-template-columns: 1fr 2fr
     &.hover
       background: gray
-      .main:after
+      :deep(.main:after)
         background: var(--jko-blue-muted)
-      .main:hover:after
+      :deep(.main:hover:after)
         background: var(--jko-blue)
       :deep(li.active)
         color: white
