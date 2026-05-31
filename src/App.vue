@@ -13,123 +13,138 @@
     has a lot of the writings for what went into this version of the resume.
     -->
     <div
+      v-for="pageIdx in totalPages"
+      :key="`page-${pageIdx - 1}`"
       @mouseover="() => setPaperHovering(true)"
       @mouseleave="() => setPaperHovering(false)"
       :class="['paper', { hover: isHoveringOverPaper }]"
     >
       <div class="col-1">
-        <div class="section main">
-          <h1 class="name">{{ resumeData.name }}</h1>
-          <h2>{{ resumeData.role }}</h2>
-          <ul class="contact-list">
-            <li v-for="item in resumeData.contact" :key="item.text">
-              <a target="_blank" :href="item.href">
-                {{ item.text }}
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h2>Introduction</h2>
-          <div>{{ resumeData.introduction }}</div>
-        </div>
-
-        <div class="section">
-          <h2>Education</h2>
-          <h3>{{ resumeData.education.school }}</h3>
-          <ul class="plain-list">
-            <li class="flex justify-between">
-              <span>{{ resumeData.education.degree }}</span>
-              <span class="small-text">{{ resumeData.education.notes }}</span>
-            </li>
-            <li>{{ resumeData.education.detail }}</li>
-          </ul>
-        </div>
-
-        <SkillsList
-          :title="resumeData.skills.languages.title"
-          :items="resumeData.skills.languages.items"
-          :highlighted-skill="highlightedSkill"
-        />
-
-        <div class="section">
-          <h2>{{ resumeData.skills.paradigms.title }}</h2>
-          <ul class="slash-list">
-            <li v-for="item in resumeData.skills.paradigms.items" :key="item">
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-
-        <SkillsList
-          :title="resumeData.skills.tools.title"
-          :items="resumeData.skills.tools.items"
-          :highlighted-skill="highlightedSkill"
-        />
+        <!-- Teleport target for left column -->
+        <div :id="`left-col-${pageIdx - 1}`"></div>
       </div>
-
       <div class="col-2">
-        <h2>Experience</h2>
-
-        <ResumeItem
-          v-for="item in resumeData.experiencePage1"
-          :key="item.id || item.title"
-          :item="item"
-          @highlight-skills="onHighlightSkills"
-          @clear-highlight="onClearHighlight"
-        />
+        <!-- Automatically inject continued header on subsequent pages -->
+        <h2 v-if="pageIdx > 1" style="margin-top: 0">Experience (continued)</h2>
+        <!-- Teleport target for right column -->
+        <div :id="`right-col-${pageIdx - 1}`"></div>
       </div>
     </div>
-    <div
-      @mouseover="() => setPaperHovering(true)"
-      @mouseleave="() => setPaperHovering(false)"
-      :class="['paper', { hover: isHoveringOverPaper }]"
+
+    <!-- Left Column Content Divider -->
+    <ContentDivider
+      to-prefix="left-col"
+      width="2.25in"
+      :max-height="1008"
+      @update:page-count="(val) => (leftPages = val)"
     >
-      <div class="col-1">
-        <div class="section">
-          <h2>Miscellaneous</h2>
-          <ul class="job-desc-list">
-            <li v-for="(item, index) in resumeData.miscellaneous" :key="index">
-              {{ item }}
-            </li>
-          </ul>
-        </div>
+      <div class="section main">
+        <h1 class="name">{{ resumeData.name }}</h1>
+        <h2>{{ resumeData.role }}</h2>
+        <ul class="contact-list">
+          <li v-for="item in resumeData.contact" :key="item.text">
+            <a target="_blank" :href="item.href">
+              {{ item.text }}
+            </a>
+          </li>
+        </ul>
       </div>
-      <div class="col-2">
-        <h2>Experience (continued)</h2>
 
-        <ResumeItem
-          v-for="item in resumeData.experiencePage2"
-          :key="item.id || item.title"
-          :item="item"
-          @highlight-skills="onHighlightSkills"
-          @clear-highlight="onClearHighlight"
-        />
-
-        <h2 class="margin-top">Projects</h2>
-
-        <ResumeItem
-          v-for="item in resumeData.projects"
-          :key="item.id || item.title"
-          :item="item"
-          @highlight-skills="onHighlightSkills"
-          @clear-highlight="onClearHighlight"
-        />
+      <div class="section">
+        <h2>Introduction</h2>
+        <div>{{ resumeData.introduction }}</div>
       </div>
-    </div>
+
+      <div class="section">
+        <h2>Education</h2>
+        <h3>{{ resumeData.education.school }}</h3>
+        <ul class="plain-list">
+          <li class="flex justify-between">
+            <span>{{ resumeData.education.degree }}</span>
+            <span class="small-text">{{ resumeData.education.notes }}</span>
+          </li>
+          <li>{{ resumeData.education.detail }}</li>
+        </ul>
+      </div>
+
+      <SkillsList
+        :title="resumeData.skills.languages.title"
+        :items="resumeData.skills.languages.items"
+        :highlighted-skill="highlightedSkill"
+      />
+
+      <div class="section">
+        <h2>{{ resumeData.skills.paradigms.title }}</h2>
+        <ul class="slash-list">
+          <li v-for="item in resumeData.skills.paradigms.items" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <SkillsList
+        :title="resumeData.skills.tools.title"
+        :items="resumeData.skills.tools.items"
+        :highlighted-skill="highlightedSkill"
+      />
+
+      <div class="section">
+        <h2>Miscellaneous</h2>
+        <ul class="job-desc-list">
+          <li v-for="(item, index) in resumeData.miscellaneous" :key="index">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </ContentDivider>
+
+    <!-- Right Column Content Divider -->
+    <ContentDivider
+      to-prefix="right-col"
+      width="5.5in"
+      :max-height="1008"
+      @update:page-count="(val) => (rightPages = val)"
+    >
+      <h2>Experience</h2>
+      <ResumeItem
+        v-for="item in allExperiences"
+        :key="item.id || item.title"
+        :item="item"
+        @highlight-skills="onHighlightSkills"
+        @clear-highlight="onClearHighlight"
+      />
+
+      <h2 class="margin-top">Projects</h2>
+      <ResumeItem
+        v-for="item in resumeData.projects"
+        :key="item.id || item.title"
+        :item="item"
+        @highlight-skills="onHighlightSkills"
+        @clear-highlight="onClearHighlight"
+      />
+    </ContentDivider>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { resumeData } from './data/resume'
 import SkillsList from './components/SkillsList.vue'
 import ResumeItem from './components/ResumeItem.vue'
+import ContentDivider from './components/ContentDivider.vue'
 
 const isInteractive = ref(false)
 const isHoveringOverPaper = ref(false)
 const highlightedSkill = ref<string[]>([])
+
+const leftPages = ref(1)
+const rightPages = ref(1)
+const totalPages = computed(() => Math.max(leftPages.value, rightPages.value))
+
+const allExperiences = computed(() => [
+  ...resumeData.experiencePage1,
+  ...resumeData.experiencePage2
+])
 
 setTimeout(() => {
   isInteractive.value = true
