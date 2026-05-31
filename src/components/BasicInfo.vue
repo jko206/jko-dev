@@ -31,7 +31,7 @@ h2
 
 .main
   margin-top: 0.125in
-  height: 2.25in
+  aspect-ratio: 1 / 1
   top: -0.125in
   transition: all 0.1s
   &:after
