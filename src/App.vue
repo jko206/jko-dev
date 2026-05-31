@@ -1,13 +1,6 @@
 <template>
   <div :class="['background', { interactive: isInteractive }]">
-    <div class="controls flex justify-center space-x-5 p-2">
-      <button @click="() => setInteractive(false)" :class="['control', { active: !isInteractive }]">
-        Paper
-      </button>
-      <button @click="() => setInteractive(true)" :class="['control', { active: isInteractive }]">
-        Interactive
-      </button>
-    </div>
+    <ResumeControls v-model:is-interactive="isInteractive" />
     <!-- 
     https://chatgpt.com/c/4c764e13-76c7-4042-a049-8a5bbf5aa01a
     has a lot of the writings for what went into this version of the resume.
@@ -38,17 +31,7 @@
       :max-height="1008"
       @update:page-count="(val) => (leftPages = val)"
     >
-      <div class="section main">
-        <h1 class="name">{{ resumeData.name }}</h1>
-        <h2>{{ resumeData.role }}</h2>
-        <ul class="contact-list">
-          <li v-for="item in resumeData.contact" :key="item.text">
-            <a target="_blank" :href="item.href">
-              {{ item.text }}
-            </a>
-          </li>
-        </ul>
-      </div>
+      <BasicInfo :name="resumeData.name" :role="resumeData.role" :contact="resumeData.contact" />
 
       <div class="section">
         <h2>Introduction</h2>
@@ -73,14 +56,11 @@
         :highlighted-skill="highlightedSkill"
       />
 
-      <div class="section">
-        <h2>{{ resumeData.skills.paradigms.title }}</h2>
-        <ul class="slash-list">
-          <li v-for="item in resumeData.skills.paradigms.items" :key="item">
-            {{ item }}
-          </li>
-        </ul>
-      </div>
+      <SkillsList
+        :title="resumeData.skills.paradigms.title"
+        :items="resumeData.skills.paradigms.items"
+        :highlighted-skill="highlightedSkill"
+      />
 
       <SkillsList
         :title="resumeData.skills.tools.title"
@@ -132,6 +112,8 @@ import { resumeData } from './data/resume'
 import SkillsList from './components/SkillsList.vue'
 import ResumeItem from './components/ResumeItem.vue'
 import ContentDivider from './components/ContentDivider.vue'
+import ResumeControls from './components/ResumeControls.vue'
+import BasicInfo from './components/BasicInfo.vue'
 
 const isInteractive = ref(false)
 const isHoveringOverPaper = ref(false)
@@ -150,7 +132,6 @@ setTimeout(() => {
   isInteractive.value = true
 }, 3_000)
 
-const setInteractive = (val: boolean) => (isInteractive.value = val)
 const setPaperHovering = (val: boolean) => (isHoveringOverPaper.value = val)
 
 const onHighlightSkills = (skills: string[]) => {
