@@ -22,3 +22,8 @@ defineProps<{
   highlightedSkill: string[]
 }>()
 </script>
+
+<style lang="sass" scoped>
+h2
+  font-size: 18px
+</style>

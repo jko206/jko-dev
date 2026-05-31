@@ -230,7 +230,7 @@ h3
     &:hover
       border-bottom: 1px solid var(--jko-highlight)
 
-.slash-list li
+:deep(.slash-list li)
   display: inline
   word-break: break-word
   &:first-child:before
@@ -300,7 +300,7 @@ h3
         background: var(--jko-blue-muted)
       .main:hover:after
         background: var(--jko-blue)
-      li.active
+      :deep(li.active)
         color: white
         &:before
           color: black
