@@ -17,10 +17,6 @@
         <div :id="`left-col-${pageIdx - 1}`"></div>
       </div>
       <div class="col-2">
-        <!-- Automatically inject continued header on subsequent pages -->
-        <ResumeSectionHeader v-if="pageIdx > 1" style="margin-top: 0"
-          >Experience (continued)</ResumeSectionHeader
-        >
         <!-- Teleport target for right column -->
         <div :id="`right-col-${pageIdx - 1}`"></div>
       </div>

@@ -16,6 +16,7 @@
       v-for="(vnode, idx) in flattenedChildren"
       :key="`ghost-${idx}`"
       :ref="(el) => setItemRef(el, idx)"
+      style="display: flow-root; width: 100%;"
     >
       <!-- Teleport moves the element to target selector once calculated -->
       <Teleport :to="targets[idx]" :disabled="!targets[idx]">
