@@ -253,14 +253,6 @@ h3
         &:before
           color: black
 
-  &:not(.fluid)
-    .paper:nth-child(2)
-      margin: 50px auto 0
-      padding-bottom: 0
-      padding-top: 0.25in
-    .paper:nth-child(3) .col-1
-      top: -88px
-      position: relative
 
   .col-2
     .section:hover
