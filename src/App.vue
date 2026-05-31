@@ -18,7 +18,9 @@
       </div>
       <div class="col-2">
         <!-- Automatically inject continued header on subsequent pages -->
-        <h2 v-if="pageIdx > 1" style="margin-top: 0">Experience (continued)</h2>
+        <ResumeSectionHeader v-if="pageIdx > 1" style="margin-top: 0"
+          >Experience (continued)</ResumeSectionHeader
+        >
         <!-- Teleport target for right column -->
         <div :id="`right-col-${pageIdx - 1}`"></div>
       </div>
@@ -34,24 +36,12 @@
       <BasicInfo :name="resumeData.name" :role="resumeData.role" :contact="resumeData.contact" />
 
       <div class="section">
-        <h2>
-          <svg viewBox="0 0 24 24" class="section-icon">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          <span>Introduction</span>
-        </h2>
+        <ResumeSectionHeader icon="user">Introduction</ResumeSectionHeader>
         <div>{{ resumeData.introduction }}</div>
       </div>
 
       <div class="section">
-        <h2>
-          <svg viewBox="0 0 24 24" class="section-icon">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-          </svg>
-          <span>Education</span>
-        </h2>
+        <ResumeSectionHeader icon="book">Education</ResumeSectionHeader>
         <h3>{{ resumeData.education.school }}</h3>
         <ul class="plain-list">
           <li class="flex justify-between">
@@ -84,13 +74,7 @@
       />
 
       <div class="section">
-        <h2>
-          <svg viewBox="0 0 24 24" class="section-icon">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-          </svg>
-          <span>Miscellaneous</span>
-        </h2>
+        <ResumeSectionHeader icon="compass">Miscellaneous</ResumeSectionHeader>
         <ul class="job-desc-list">
           <li v-for="(item, index) in resumeData.miscellaneous" :key="index">
             {{ item }}
@@ -136,6 +120,7 @@ import ResumeItem from './components/ResumeItem.vue'
 import ContentDivider from './components/ContentDivider.vue'
 import ResumeControls from './components/ResumeControls.vue'
 import BasicInfo from './components/BasicInfo.vue'
+import ResumeSectionHeader from './components/ResumeSectionHeader.vue'
 
 const isInteractive = ref(false)
 const isPaper = ref(true)
@@ -180,21 +165,7 @@ body
 
 <style scoped lang="sass">
 
-h2
-  font-size: 18px
-  display: flex
-  align-items: center
 
-.section-icon
-  width: 18px
-  height: 18px
-  stroke: currentColor
-  fill: none
-  stroke-width: 2
-  stroke-linecap: round
-  stroke-linejoin: round
-  margin-right: 8px
-  flex-shrink: 0
 
 h3
   font-size: 16px
