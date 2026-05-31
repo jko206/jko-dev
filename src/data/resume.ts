@@ -18,11 +18,6 @@ export interface SkillGroup {
   items: SkillItem[]
 }
 
-export interface ConceptGroup {
-  title: string
-  items: string[]
-}
-
 export interface EducationInfo {
   school: string
   degree: string
@@ -60,7 +55,7 @@ export interface ResumeData {
   education: EducationInfo
   skills: {
     languages: SkillGroup
-    paradigms: ConceptGroup
+    paradigms: SkillGroup
     tools: SkillGroup
   }
   experiencePage1: ExperienceItem[]
@@ -122,22 +117,22 @@ export const resumeData: ResumeData = {
     paradigms: {
       title: 'Concepts / Paradigms',
       items: [
-        'Functional programming',
-        'Event-driven architecture',
-        'Cloud computing',
-        'Single/Multi Page Application',
-        'Object oriented programming (OOP)',
-        'Responsive design',
-        'Test-driven development',
-        'React hooks',
-        'Vue composition',
-        'Algorithms',
-        'Data structures',
-        'User interface (UI)',
-        'User experience (UX)',
-        'Internationalization (i18n)',
-        'Testing (unit / integration / E2E)',
-        'Continuous integration / continuous deployment (CI/CD)'
+        { id: 'func_prog', name: 'Functional programming' },
+        { id: 'eda', name: 'Event-driven architecture' },
+        { id: 'cloud', name: 'Cloud computing' },
+        { id: 'spa', name: 'Single/Multi Page Application' },
+        { id: 'oop', name: 'Object oriented programming (OOP)' },
+        { id: 'resp', name: 'Responsive design' },
+        { id: 'tdd', name: 'Test-driven development' },
+        { id: 'hooks', name: 'React hooks' },
+        { id: 'vue_comp', name: 'Vue composition' },
+        { id: 'algo', name: 'Algorithms' },
+        { id: 'data_struct', name: 'Data structures' },
+        { id: 'ui', name: 'User interface (UI)' },
+        { id: 'ux', name: 'User experience (UX)' },
+        { id: 'i18n', name: 'Internationalization (i18n)' },
+        { id: 'testing', name: 'Testing (unit / integration / E2E)' },
+        { id: 'cicd', name: 'Continuous integration / continuous deployment (CI/CD)' }
       ]
     },
     tools: {
