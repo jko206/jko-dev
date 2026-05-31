@@ -66,3 +66,10 @@ const onMouseLeave = () => {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+h3
+  font-size: 16px
+  font-weight: 800
+  color: #0f172a
+</style>
