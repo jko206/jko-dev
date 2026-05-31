@@ -5,10 +5,13 @@
     @mouseleave="onMouseLeave"
   >
     <div class="h3-row">
-      <h2 v-if="isExperience">
-        <svg viewBox="0 0 24 24" class="section-icon">
+      <h2 v-if="isExperience || isProject">
+        <svg v-if="isExperience" viewBox="0 0 24 24" class="section-icon">
           <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
           <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <svg v-else-if="isProject" viewBox="0 0 24 24" class="section-icon">
+          <path d="M22 2s-3 7-8.5 12H9v-4.5C14.5 4 22 2 22 2zM9 11.5L3 21M12.5 15L3 21"></path>
         </svg>
         <span>{{ item.title }}</span>
       </h2>
@@ -39,9 +42,11 @@ const props = withDefaults(
   defineProps<{
     item: ExperienceItem | ProjectItem
     isExperience?: boolean
+    isProject?: boolean
   }>(),
   {
-    isExperience: false
+    isExperience: false,
+    isProject: false
   }
 )
 

@@ -115,16 +115,12 @@
         @clear-highlight="onClearHighlight"
       />
 
-      <h2 class="margin-top">
-        <svg viewBox="0 0 24 24" class="section-icon">
-          <path d="M22 2s-3 7-8.5 12H9v-4.5C14.5 4 22 2 22 2zM9 11.5L3 21M12.5 15L3 21"></path>
-        </svg>
-        <span>Projects</span>
-      </h2>
       <ResumeItem
-        v-for="item in resumeData.projects"
+        v-for="(item, index) in resumeData.projects"
         :key="item.id || item.title"
         :item="item"
+        :class="{ 'margin-top': index === 0 }"
+        is-project
         @highlight-skills="onHighlightSkills"
         @clear-highlight="onClearHighlight"
       />
