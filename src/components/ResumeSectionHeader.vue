@@ -80,8 +80,8 @@ defineProps<{
   margin: 0
 
 .section-icon
-  width: 18px
-  height: 18px
+  width: 16px
+  height: 16px
   stroke: currentColor
   fill: none
   stroke-width: 2
