@@ -11,7 +11,11 @@
           <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
         </svg>
         <svg v-else-if="isProject" viewBox="0 0 24 24" class="section-icon">
-          <path d="M22 2s-3 7-8.5 12H9v-4.5C14.5 4 22 2 22 2zM9 11.5L3 21M12.5 15L3 21"></path>
+          <path d="M12 2S8 7 8 12c0 3 1.5 5 2 6h4c.5-1 2-3 2-6 0-5-4-10-4-10z"></path>
+          <path d="M8 14c-1.5.5-3 2-3 4v2h3v-2l1-2"></path>
+          <path d="M16 14c1.5.5 3 2 3 4v2h-3v-2l-1-2"></path>
+          <circle cx="12" cy="10" r="1.5"></circle>
+          <path d="M10 20c0 2 2 4 2 4s2-2 2-4"></path>
         </svg>
         <span>{{ item.title }}</span>
       </h2>
