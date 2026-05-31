@@ -67,7 +67,7 @@
             <circle cx="4" cy="4" r="2"></circle>
           </svg>
 
-          {{ item.text }}
+          <span class="contact-text">{{ item.text }}</span>
         </a>
       </li>
     </ul>
@@ -135,10 +135,14 @@ h2
     color: var(--jko-highlight)
     display: flex
     align-items: center
-    border-bottom: 1px solid rgb(141 173 212)
     text-decoration: none
     &:hover
-      border-bottom: 1px solid var(--jko-highlight)
+      .contact-text
+        border-bottom-color: var(--jko-highlight)
+
+  .contact-text
+    border-bottom: 1px solid rgb(141 173 212)
+    transition: border-bottom-color 0.1s
 
 .contact-icon
   width: 14px
