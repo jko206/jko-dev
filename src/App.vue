@@ -34,12 +34,24 @@
       <BasicInfo :name="resumeData.name" :role="resumeData.role" :contact="resumeData.contact" />
 
       <div class="section">
-        <h2>Introduction</h2>
+        <h2>
+          <svg viewBox="0 0 24 24" class="section-icon">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Introduction</span>
+        </h2>
         <div>{{ resumeData.introduction }}</div>
       </div>
 
       <div class="section">
-        <h2>Education</h2>
+        <h2>
+          <svg viewBox="0 0 24 24" class="section-icon">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          <span>Education</span>
+        </h2>
         <h3>{{ resumeData.education.school }}</h3>
         <ul class="plain-list">
           <li class="flex justify-between">
@@ -51,25 +63,34 @@
       </div>
 
       <SkillsList
+        icon="code"
         :title="resumeData.skills.languages.title"
         :items="resumeData.skills.languages.items"
         :highlighted-skill="highlightedSkill"
       />
 
       <SkillsList
+        icon="cpu"
         :title="resumeData.skills.paradigms.title"
         :items="resumeData.skills.paradigms.items"
         :highlighted-skill="highlightedSkill"
       />
 
       <SkillsList
+        icon="wrench"
         :title="resumeData.skills.tools.title"
         :items="resumeData.skills.tools.items"
         :highlighted-skill="highlightedSkill"
       />
 
       <div class="section">
-        <h2>Miscellaneous</h2>
+        <h2>
+          <svg viewBox="0 0 24 24" class="section-icon">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+          <span>Miscellaneous</span>
+        </h2>
         <ul class="job-desc-list">
           <li v-for="(item, index) in resumeData.miscellaneous" :key="index">
             {{ item }}
@@ -85,7 +106,13 @@
       :max-height="isPaper ? 1008 : 999999"
       @update:page-count="(val) => (rightPages = val)"
     >
-      <h2>Experience</h2>
+      <h2>
+        <svg viewBox="0 0 24 24" class="section-icon">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <span>Experience</span>
+      </h2>
       <ResumeItem
         v-for="item in allExperiences"
         :key="item.id || item.title"
@@ -94,7 +121,12 @@
         @clear-highlight="onClearHighlight"
       />
 
-      <h2 class="margin-top">Projects</h2>
+      <h2 class="margin-top">
+        <svg viewBox="0 0 24 24" class="section-icon">
+          <path d="M22 2s-3 7-8.5 12H9v-4.5C14.5 4 22 2 22 2zM9 11.5L3 21M12.5 15L3 21"></path>
+        </svg>
+        <span>Projects</span>
+      </h2>
       <ResumeItem
         v-for="item in resumeData.projects"
         :key="item.id || item.title"
@@ -160,6 +192,20 @@ body
 
 h2
   font-size: 18px
+  display: flex
+  align-items: center
+
+.section-icon
+  width: 18px
+  height: 18px
+  stroke: currentColor
+  fill: none
+  stroke-width: 2
+  stroke-linecap: round
+  stroke-linejoin: round
+  margin-right: 8px
+  flex-shrink: 0
+
 h3
   font-size: 16px
 .small-text
