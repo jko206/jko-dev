@@ -1,7 +1,9 @@
 <template>
   <div class="section main">
-    <h1 class="name">{{ name }}</h1>
-    <h2>{{ role }}</h2>
+    <div class="header-group">
+      <h1 class="name">{{ name }}</h1>
+      <h2>{{ role }}</h2>
+    </div>
     <ul class="contact-list">
       <li v-for="item in contact" :key="item.text">
         <a target="_blank" :href="item.href">
@@ -30,6 +32,9 @@ h2
   font-size: 18px
 
 .main
+  display: flex
+  flex-direction: column
+  justify-content: space-between
   margin-top: 0.125in
   aspect-ratio: 1 / 1
   top: -0.125in
@@ -48,6 +53,7 @@ h2
 
 .contact-list
   margin-top: 13px
+  margin-bottom: 0
   a
     color: var(--jko-highlight)
     display: inline-block
