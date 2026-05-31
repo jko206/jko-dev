@@ -65,4 +65,4 @@ export interface ResumeData {
 
 import resumeDataJson from './resume.json'
 
-export const resumeData: ResumeData = resumeDataJson as ResumeData
+export const resumeData: ResumeData = resumeDataJson
