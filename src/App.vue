@@ -130,10 +130,7 @@ const totalPages = computed(() => {
   return Math.max(leftPages.value, rightPages.value)
 })
 
-const allExperiences = computed(() => [
-  ...resumeData.experiencePage1,
-  ...resumeData.experiencePage2
-])
+const allExperiences = computed(() => resumeData.experiences)
 
 setTimeout(() => {
   isInteractive.value = true

@@ -58,8 +58,7 @@ export interface ResumeData {
     paradigms: SkillGroup
     tools: SkillGroup
   }
-  experiencePage1: ExperienceItem[]
-  experiencePage2: ExperienceItem[]
+  experiences: ExperienceItem[]
   projects: ProjectItem[]
   miscellaneous: string[]
 }
@@ -151,7 +150,7 @@ export const resumeData: ResumeData = {
       ]
     }
   },
-  experiencePage1: [
+  experiences: [
     {
       id: 'meta_monetization',
       title: 'Meta: Applied Artificial Intelligence',
@@ -291,9 +290,7 @@ export const resumeData: ResumeData = {
       ],
       skills: ['vue', 'scss', 'sass', 'html', 'spa', 'vue-tools', 'e2e', 'jest', 'unit', 'resp'],
       hidden: true
-    }
-  ],
-  experiencePage2: [
+    },
     {
       id: 'meta',
       title: 'Meta: Web3 Services',
