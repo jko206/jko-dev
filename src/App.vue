@@ -1,6 +1,10 @@
 <template>
   <div :class="['background', { interactive: isInteractive, fluid: !isPaper }]">
-    <ResumeControls v-model:is-interactive="isInteractive" v-model:is-paper="isPaper" />
+    <ResumeControls
+      v-model:is-interactive="isInteractive"
+      v-model:is-paper="isPaper"
+      v-model:is-v2="isV2"
+    />
     <!-- 
     https://chatgpt.com/c/4c764e13-76c7-4042-a049-8a5bbf5aa01a
     has a lot of the writings for what went into this version of the resume.
@@ -110,7 +114,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { resumeData } from './data/resume'
+import { resumeDataV1, resumeDataV2 } from './data/resume'
 import SkillsList from './components/SkillsList.vue'
 import ResumeItem from './components/ResumeItem.vue'
 import ContentDivider from './components/ContentDivider.vue'
@@ -120,6 +124,7 @@ import ResumeSectionHeader from './components/ResumeSectionHeader.vue'
 
 const isInteractive = ref(false)
 const isPaper = ref(true)
+const isV2 = ref(true)
 const isHoveringOverPaper = ref(false)
 const highlightedSkill = ref<string[]>([])
 
@@ -132,7 +137,8 @@ const totalPages = computed(() => {
 
 const pageMaxContentHeight = computed(() => 1235)
 
-const allExperiences = computed(() => resumeData.experiences)
+const resumeData = computed(() => (isV2.value ? resumeDataV2 : resumeDataV1))
+const allExperiences = computed(() => resumeData.value.experiences)
 
 setTimeout(() => {
   isInteractive.value = true
@@ -152,10 +158,14 @@ const onClearHighlight = () => {
 <style lang="sass">
 body
   background-color: rgb(82, 86, 89) !important
-  font-size: 14px
+  font-size: calc(14px + var(--font-offset, 0px))
   --jko-blue: rgb(220 230 242)
   --jko-blue-muted: rgb(106 128 154)
   --jko-highlight: rgb(43 83 132)
+
+@media print
+  body
+    --font-offset: -2px
 </style>
 
 <style scoped lang="sass">
@@ -163,9 +173,9 @@ body
 
 
 h3
-  font-size: 16px
+  font-size: calc(16px + var(--font-offset, 0px))
 .small-text
-  font-size: 9px
+  font-size: calc(9px + var(--font-offset, 0px))
   color: gray
 .background
   --page-width: 1000px
@@ -176,7 +186,7 @@ h3
   --col-2-width: calc(var(--page-width) * 5.5 / 8.5)
 
 .section
-  font-size: 12px
+  font-size: calc(12px + var(--font-offset, 0px))
 .paper
   background: white
   width:  var(--page-width)
@@ -230,8 +240,13 @@ h3
   padding-left: 20px
 
 @media print
+  @page
+    margin: 0
+    size: letter
   .paper
     margin: 0
+    box-shadow: none
+    font-size: calc(12px + var(--font-offset, 0px))
   .background
     --page-width: 8.5in
     transform: scale(1)

@@ -1,5 +1,15 @@
 <template>
   <div class="controls-fab">
+    <!-- Version Button -->
+    <button
+      @click="emit('update:isV2', !isV2)"
+      :class="['fab-btn', { active: isV2 }]"
+      title="Toggle V2 Resume"
+      aria-label="Toggle V2 Resume"
+    >
+      <span style="font-weight: bold; font-size: calc(16px + var(--font-offset, 0px));">V2</span>
+    </button>
+
     <!-- Paper Mode Button -->
     <button
       @click="emit('update:isPaper', !isPaper)"
@@ -36,11 +46,13 @@
 defineProps<{
   isInteractive: boolean
   isPaper: boolean
+  isV2: boolean
 }>()
 
 const emit = defineEmits<{
   (e: 'update:isInteractive', val: boolean): void
   (e: 'update:isPaper', val: boolean): void
+  (e: 'update:isV2', val: boolean): void
 }>()
 </script>
 
