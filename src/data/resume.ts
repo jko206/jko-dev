@@ -63,6 +63,8 @@ export interface ResumeData {
   miscellaneous: string[]
 }
 
-import resumeDataJson from './resume.json'
+import resumeDataJsonV1 from './resume.json'
+import resumeDataJsonV2 from './resume_v2.json'
 
-export const resumeData: ResumeData = resumeDataJson
+export const resumeDataV1: ResumeData = resumeDataJsonV1
+export const resumeDataV2: ResumeData = resumeDataJsonV2
