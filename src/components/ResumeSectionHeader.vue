@@ -74,7 +74,7 @@ defineProps<{
 
 <style lang="sass" scoped>
 .resume-section-header
-  font-size: 18px
+  font-size: calc(18px + var(--font-offset, 0px))
   display: flex
   align-items: center
   margin: 0

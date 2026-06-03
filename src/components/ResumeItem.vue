@@ -89,7 +89,7 @@ const onMouseLeave = () => {
   align-items: center
 
 h3
-  font-size: 16px
+  font-size: calc(16px + var(--font-offset, 0px))
   font-weight: 800
   color: #0f172a
   margin: 0

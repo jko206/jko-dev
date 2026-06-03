@@ -95,10 +95,10 @@ const getIconComponent = (href: string) => {
 
 <style lang="sass" scoped>
 h1
-  font-size: 40px
+  font-size: calc(40px + var(--font-offset, 0px))
 
 h2
-  font-size: 18px
+  font-size: calc(18px + var(--font-offset, 0px))
 
 .main
   display: flex
